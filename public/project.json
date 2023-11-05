@@ -1,6 +1,6 @@
 [
     {
-        "url_imagen":"../src/img/espantapajaro.webp",
+        "url_imagen":"./img/espantapajaro.webp",
         "tag": "vanilla",
         "titulo": "404 not found",
         "descripcion": "Primer proyecto, página estática de un error 404",
@@ -9,7 +9,7 @@
         "id": 1
     },
     {
-        "url_imagen":"../src/img/my-team1.webp",
+        "url_imagen":"./img/my-team1.webp",
         "tag": "vanilla",
         "titulo": "work team",
         "descripcion": "maquetación sencilla de una vista con un equipo de trabajo, práctica de html y css",
@@ -18,7 +18,7 @@
         "id": 2
     },
     {
-        "url_imagen":"../src/img/consultant.webp",
+        "url_imagen":"./img/consultant.webp",
         "tag": "React",
         "titulo": "Consultora",
         "descripcion": "Maquetación para la portada de una consultora, decoración de interior. Utilizando React como framework",
@@ -27,7 +27,7 @@
         "id": 3
     },
     {
-        "url_imagen":"../src/img/recipe.webp",
+        "url_imagen":".img/recipe.webp",
         "tag": "React,JS",
         "titulo": "Recetario",
         "descripcion": "Ejemplo de página con checkbox, un poco de lógica aplicada para darle funcionalidad",
@@ -37,7 +37,7 @@
     },
     {
         
-        "url_imagen":"../src/img/my-blog.webp",
+        "url_imagen":"./img/my-blog.webp",
         "tag": "React",
         "titulo": "Mi Blog",
         "descripcion": "Blog personal con imágenes de mis viajes",
@@ -46,7 +46,7 @@
         "id": 5
     },
     {
-        "url_imagen":"../src/img/check-out.webp",
+        "url_imagen":"./img/check-out.webp",
         "tag": "React",
         "titulo": "Check out",
         "descripcion": "Ejemplo de carrito de compra para una tienda ",
@@ -55,7 +55,7 @@
         "id": 6
     },
     {
-        "url_imagen":"../src/img/edie.webp",
+        "url_imagen":"./img/edie.webp",
         "tag": "React",
         "titulo": "Edie",
         "descripcion": "Una página principal para una empresa ofertando un servicio",
