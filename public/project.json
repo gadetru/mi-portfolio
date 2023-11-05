@@ -27,7 +27,7 @@
         "id": 3
     },
     {
-        "url_imagen":".img/recipe.webp",
+        "url_imagen":"./img/recipe.webp",
         "tag": "React,JS",
         "titulo": "Recetario",
         "descripcion": "Ejemplo de página con checkbox, un poco de lógica aplicada para darle funcionalidad",
