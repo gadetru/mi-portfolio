@@ -58,6 +58,7 @@ export const Proyectos = ({ filtro }) => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetch("../src/project.json");
+      const data = await fetch("../../project.json");
       const result = await data.json();
       setProjects(result);
     };
