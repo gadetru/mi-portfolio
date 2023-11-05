@@ -1,0 +1,66 @@
+[
+    {
+        "url_imagen":"../src/img/espantapajaro.webp",
+        "tag": "vanilla",
+        "titulo": "404 not found",
+        "descripcion": "Primer proyecto, página estática de un error 404",
+        "url_github": "https://github.com/gadetru/devchallenges",
+        "url_despliegue": "https://noloencuentro.netlify.app/",
+        "id": 1
+    },
+    {
+        "url_imagen":"../src/img/my-team1.webp",
+        "tag": "vanilla",
+        "titulo": "work team",
+        "descripcion": "maquetación sencilla de una vista con un equipo de trabajo, práctica de html y css",
+        "url_github": "https://github.com/gadetru/my-team-challenge",
+        "url_despliegue": "https://timely-salmiakki-614aa3.netlify.app/",
+        "id": 2
+    },
+    {
+        "url_imagen":"../src/img/consultant.webp",
+        "tag": "React",
+        "titulo": "Consultora",
+        "descripcion": "Maquetación para la portada de una consultora, decoración de interior. Utilizando React como framework",
+        "url_github": "https://github.com/gadetru/consultant",
+        "url_despliegue": "https://app.netlify.com/sites/remarkable-choux-fabfb7/overview",
+        "id": 3
+    },
+    {
+        "url_imagen":"../src/img/recipe.webp",
+        "tag": "React,JS",
+        "titulo": "Recetario",
+        "descripcion": "Ejemplo de página con checkbox, un poco de lógica aplicada para darle funcionalidad",
+        "url_github": "https://github.com/gadetru/recipe",
+        "url_despliegue": "https://regal-rolypoly-eef4e7.netlify.app/",
+        "id": 4
+    },
+    {
+        
+        "url_imagen":"../src/img/my-blog.webp",
+        "tag": "React",
+        "titulo": "Mi Blog",
+        "descripcion": "Blog personal con imágenes de mis viajes",
+        "url_github": "https://github.com/gadetru/my-gallery",
+        "url_despliegue": "https://my-cantabria-gallery.netlify.app/",
+        "id": 5
+    },
+    {
+        "url_imagen":"../src/img/check-out.webp",
+        "tag": "React",
+        "titulo": "Check out",
+        "descripcion": "Ejemplo de carrito de compra para una tienda ",
+        "url_github": "https://beamish-starlight-4723bc.netlify.app/",
+        "url_despliegue": "https://noloencuentro.netlify.app/",
+        "id": 6
+    },
+    {
+        "url_imagen":"../src/img/edie.webp",
+        "tag": "React",
+        "titulo": "Edie",
+        "descripcion": "Una página principal para una empresa ofertando un servicio",
+        "url_github": "https://github.com/gadetru/Edie-homepage",
+        "url_despliegue": "https://charming-starlight-2c43df.netlify.app/",
+        "id": 7
+    }
+]

@@ -1,0 +1,74 @@
+@import '../../app.scss';
+.hobbies{
+    border-radius: 24px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: $Gray-1;
+    height: 100%;
+    h2{
+        padding: 15px;
+        font-family:montserrat;
+        font-size: 24px;
+        color:$Gray-2;
+        margin: 0;
+    }
+    div{
+        img{
+            width: 96%;
+            height: 150px;
+            object-fit: cover;
+            object-position: center;
+            margin: 2% 2% 0px 2%;
+            border-radius: 12px;
+            box-sizing: border-box;
+            
+        }
+        h3{
+            padding: 15px;
+            font-family:montserrat;
+            font-size: 18px;
+            color:$Gray-2;
+            margin: 0;
+        }
+        p{
+            padding: 0px 15px 15px 15px;
+            font-family:montserrat;
+            font-size: 14px;
+            color:$Gray-3;
+            margin: 0;
+        }
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 720px){
+    .hobbies{
+        h2{
+            font-size: 18px;
+        }
+        .hobbies-card{
+            width: 100%;
+            display: flex;
+            box-sizing: border-box;
+            div{
+                width: 50%;
+            }
+            h3{
+                font-size: 16px;
+                padding: 8px 15px 8px 15px;
+            }
+        }
+    }
+}
+
+@media(max-width:480px){
+    .hobbies{
+        h2{
+            font-size: 18px;
+        }
+        .hobbies-card{
+            h3{
+                font-size: 16px;
+                padding: 8px 15px 8px 15px;
+            }
+        }
+    }
+}
