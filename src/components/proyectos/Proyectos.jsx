@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 import './proyecto.scss'
 
-
 import flechaIzquierda from '../../img/flecha-izquierda.png'
 import flechaDerecha from '../../img/flecha-correcta.png'
 
@@ -58,7 +57,7 @@ export const Proyectos = ({ filtro }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch("../../src/project.json");
+      const data = await fetch("../src/project.json");
       const result = await data.json();
       setProjects(result);
     };
