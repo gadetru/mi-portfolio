@@ -85,7 +85,7 @@ export const Proyectos = ({ filtro }) => {
               <br></br>
               <p>#{project.tag}</p>
               <h2> {project.titulo}</h2>
-              <p>{project.descripcion}</p>
+              <p className="descripcion">{project.descripcion}</p>
 
               <div className="enlaces">
                 <a className="enlace-despliegue" href={project.url_despliegue} target="blank">Web </a>

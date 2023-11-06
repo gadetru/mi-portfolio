@@ -5,7 +5,7 @@
     gap: 15px;
     width: 100%;
     border-radius: 24px;
-    padding: 20px 10px 20px 10px;
+    padding: 20px 0px 20px 0px;
 
     box-sizing: border-box;
    
@@ -14,11 +14,13 @@
     display: flex;
     flex-direction: column;
     width: 25%;
+    height: 100%;
+    min-height: 500px;
     
     box-sizing: border-box;
     border-radius: 12px;
     background-color:$Gray-1;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
     padding: 10px 20px 10px 20px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -40,7 +42,8 @@
         font-family: montserrat;
     }
 
-    p{
+    .descripcion{
+        min-height: 100px;
        margin-top: 0;
        color: $Gray-3;
        font-family: montserrat;
@@ -144,7 +147,7 @@
 @media(max-width:480px){
     .projectos-card{
         width: 100%;
-        height: 450px;
+        min-height: 500px;
         
     
         h2{
@@ -153,6 +156,11 @@
     
         p{
             font-size: 14px;
+
+        }
+        .descripcion{
+            height: 60px;
+            min-height: 40px;
         }
     }
 
