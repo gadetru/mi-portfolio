@@ -1,6 +1,7 @@
 import React from 'react'
 import './perfil.scss'
 import perfil2 from'../../img/yomismo.webp'
+import perfil1 from'../../img/mi-perfil.webp'
 import telefono from'../../img/telefono-movil.svg'
 import correo from'../../img/correo-electronico.svg'
 
@@ -8,7 +9,7 @@ export const Perfil = () => {
   return (
     <div className='perfil '>
 
-        <img src={perfil2} alt='micareto'/>
+        <img src={perfil1} alt='micareto'/>
 
         <div className='contenido-personal'>
             <div className='contenedor'>

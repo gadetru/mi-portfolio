@@ -57,6 +57,28 @@
             }
         }
     }
+    .idiomas{
+        display: flex;
+        flex-direction: column;
+        div{
+            display: flex;
+            gap: 40px;
+            width: 100%;
+            box-sizing: border-box;
+            h3{
+                width: 30%;
+                font-size: 18px;
+                color: $Gray-2;
+            }
+            p{
+                width: 70%;
+                color: $Gray-3;
+                font-size: 18px;
+            }
+            
+
+        }
+    }
 }
 
 
@@ -71,23 +93,37 @@
 
             h3{
                 width: 30%;
-                font-size: 14px;
+                font-size: 16px;
             }
             ul{
                 box-sizing: border-box;
-                font-size: 14px;
+                font-size: 16px;
             }
         }
     
         .lugares{
             h3{
                 width: 30%;
-                font-size: 14px;
+                font-size: 16px;
     
             }
             ul{
                 box-sizing: border-box;
-                font-size: 14px;
+                font-size: 16px;
+            }
+        }
+        .idiomas{
+
+            div{
+
+                h3{
+                    font-size: 16px;
+                }
+                p{
+                    font-size: 16px;
+                }
+                
+    
             }
         }
     }
@@ -139,6 +175,20 @@
                 box-sizing: border-box;
                 margin: 5px 0px 5px 0px;
 
+            }
+        }
+        .idiomas{
+
+            div{
+
+                h3{
+                    font-size: 16px;
+                }
+                p{
+                    font-size: 14px;
+                }
+                
+    
             }
         }
     }
