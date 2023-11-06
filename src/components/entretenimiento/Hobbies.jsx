@@ -12,7 +12,7 @@ export const Hobbies = () => {
             <div>
               <img alt='bicicleta' src={bici}/>
               <h3> Biking </h3>
-              <p>Rutas en modo trail y enduro por bosques y montañas</p>
+              <p>Me encanta hacer rutas de trail y enduro por las montañas</p>
             </div>
             <div>
               <img alt='montaña' src={monte}/>

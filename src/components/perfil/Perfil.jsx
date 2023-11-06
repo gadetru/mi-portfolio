@@ -1,6 +1,5 @@
 import React from 'react'
 import './perfil.scss'
-import perfil1 from'../../img/perfil1.jpg'
 import perfil2 from'../../img/yomismo.webp'
 import telefono from'../../img/telefono-movil.svg'
 import correo from'../../img/correo-electronico.svg'
@@ -33,7 +32,7 @@ export const Perfil = () => {
                 </div>   
                 
             </div>
-            <p>Soy un joven apasionado por el mundo de la programación y estoy comprometido en convertirme en un desarrollador full stack. Mi entusiasmo por aprender y explorar nuevas tecnologías me impulsa a crecer constantemente en este campo. A través de mi determinación y dedicación, he adquirido habilidades tanto en el desarrollo frontend como en el backend, lo que me permite abordar proyectos de manera integral. Mi objetivo es crear soluciones tecnológicas innovadoras y eficientes, y mi portfolio refleja mi compromiso con la excelencia y el continuo aprendizaje. ¡Estoy emocionado por lo que el futuro tiene reservado en mi carrera como desarrollador full stack y estoy listo para enfrentar nuevos desafíos con pasión y creatividad</p> 
+            <p>Soy un joven apasionado por la programación, en constante búsqueda de conocimiento como desarrollador full stack. Mi cartera refleja mi dedicación para crear soluciones tecnológicas innovadoras y eficientes mientras sigo aprendiendo y creciendo en este emocionante campo.</p> 
         </div>
 
 
