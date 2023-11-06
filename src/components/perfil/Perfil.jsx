@@ -33,7 +33,7 @@ export const Perfil = () => {
                 </div>   
                 
             </div>
-            <p>Aquí estamos creando un perfil llamativo pa que me contrate alguien, ya tu sabe Aquí estamos creando un perfil llamativo pa que me contrate alguien, ya tu sabe Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minima minus accusamus laborum quod similique. Explicabo doloribus hic doloremque magni, eum ipsum veritatis repellat delectus, obcaecati voluptatibus excepturi ea soluta.</p> 
+            <p>Soy un joven apasionado por el mundo de la programación y estoy comprometido en convertirme en un desarrollador full stack. Mi entusiasmo por aprender y explorar nuevas tecnologías me impulsa a crecer constantemente en este campo. A través de mi determinación y dedicación, he adquirido habilidades tanto en el desarrollo frontend como en el backend, lo que me permite abordar proyectos de manera integral. Mi objetivo es crear soluciones tecnológicas innovadoras y eficientes, y mi portfolio refleja mi compromiso con la excelencia y el continuo aprendizaje. ¡Estoy emocionado por lo que el futuro tiene reservado en mi carrera como desarrollador full stack y estoy listo para enfrentar nuevos desafíos con pasión y creatividad</p> 
         </div>
 
 

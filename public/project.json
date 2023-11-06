@@ -62,5 +62,14 @@
         "url_github": "https://github.com/gadetru/Edie-homepage",
         "url_despliegue": "https://charming-starlight-2c43df.netlify.app/",
         "id": 7
+    },
+    {
+        "url_imagen":"./img/mi-portfolio.webp",
+        "tag": "React,JS",
+        "titulo": "Mi portfolio",
+        "descripcion": "mi mismo portfolio donde ya estoy implementando mas código en JS",
+        "url_github": "https://github.com/gadetru/mi-portfolio",
+        "url_despliegue": "https://portfolio-gabriel-delgado.netlify.app/",
+        "id": 8
     }
 ]

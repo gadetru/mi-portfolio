@@ -20,8 +20,10 @@ export const Proyectos = ({ filtro }) => {
         setItemsPerPage(1);
       } else if(window.innerWidth <= 800 && window.innerWidth > 480){
         setItemsPerPage(2);
+      }else if(window.innerWidth <= 1200 && window.innerWidth > 800){
+        setItemsPerPage(3);
+
       }
-      
       else {
         setItemsPerPage(4);
       }
@@ -86,7 +88,7 @@ export const Proyectos = ({ filtro }) => {
               <p>{project.descripcion}</p>
 
               <div className="enlaces">
-                <a className="enlace-despliegue" href={project.url_despliegue} target="blank">Despliegue</a>
+                <a className="enlace-despliegue" href={project.url_despliegue} target="blank">Web </a>
                 <a className="enlace-codigo" href={project.url_github} target="blank">Código</a>
               </div>
             </div>);
