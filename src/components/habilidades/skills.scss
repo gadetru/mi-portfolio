@@ -17,13 +17,14 @@
 .tecnologias{
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 5px;
     padding: 15px;
     div{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: 85px;
         img{
             width: 48px;
         }

@@ -11,12 +11,12 @@
    
 }
 .projectos-card{
+    text-decoration:  none;
     display: flex;
     flex-direction: column;
     width: 25%;
     height: 100%;
     min-height: 500px;
-    
     box-sizing: border-box;
     border-radius: 12px;
     background-color:$Gray-1;
@@ -24,7 +24,8 @@
     align-items: flex-start;
     padding: 10px 20px 10px 20px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    
+
+    transition: transform 0.1s; /* Agrega una transición para suavizar el cambio */
     
     img{
         
@@ -52,21 +53,22 @@
     .enlaces{
         width: 100%;
         display: flex;
-        justify-content: space-around;
-        .enlace-despliegue{
-            text-decoration: none;
-            color: $Gray-1;
-            font-family: montserrat;
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 0.7px;
-            width: 100px;
-            height: 40px;
-            border-radius: 12px;
-            background-color: $Blue-1;
-            text-align: center;
-            line-height: 40px;
-        }
+        gap: 10px;
+        justify-content: flex-start;
+        // .enlace-despliegue{
+        //     text-decoration: none;
+        //     color: $Gray-1;
+        //     font-family: montserrat;
+        //     font-size: 14px;
+        //     font-weight: bold;
+        //     letter-spacing: 0.7px;
+        //     width: 100px;
+        //     height: 40px;
+        //     border-radius: 12px;
+        //     background-color: $Blue-1;
+        //     text-align: center;
+        //     line-height: 40px;
+        // }
         .enlace-codigo{
             text-decoration: none;
             color: $Blue-1;
@@ -79,27 +81,55 @@
             background-color: $Gray-1;
             text-align: center;
             line-height: 40px;
+            
+            transition: transform 0.2s; /* Agrega una transición para suavizar el cambio */
+        }
+        .enlace-codigo:hover{
+           
+            color: $Gray-1;
+            background-color: $Blue-1;
+            transform: scale(1.1); /* Por ejemplo, aumenta el tamaño al hacer 
+            hover */
+            font-weight: bolder;
+             border: 1px solid $Gray-3;
+            box-shadow: $Blue-1 0px 3px 8px;
+
         }
     }
-    
 }
+
+.projectos-card:hover{
+    transform: scale(1.1); /* Por ejemplo, aumenta el tamaño al hacer 
+    hover */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
 
 .botones-paginas{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+
+    gap: 20px;
     align-items: center;
     padding: 25px 50px 25px 50px;
-    box-sizing: border-boxs;
     button{
         border-radius: 5px;
         text-align: center;
-        padding: 5px;
+        box-sizing: border-box;
+        transition: transform 0.1s;
+        padding-top: 5px;
         
        img{
         width: 24px;
         height: 24px;
-        }     
+        }    
+    }
+    button:hover{
+        transform: scale(1.3);
+        border-radius: 50%;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
     }
     span{
         font-family: montserrat;

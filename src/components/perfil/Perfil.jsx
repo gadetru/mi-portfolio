@@ -7,9 +7,9 @@ import correo from'../../img/correo-electronico.svg'
 
 export const Perfil = () => {
   return (
-    <div className='perfil '>
+    <div className='perfil'>
 
-        <img src={perfil1} alt='micareto'/>
+        <img className=' yomismo' src={perfil1} alt='micareto'/>
 
         <div className='contenido-personal'>
             <div className='contenedor'>
@@ -19,12 +19,14 @@ export const Perfil = () => {
                 </div>
                 
                 <div className='contacto-personal'>
-                    <div> 
+
+                    <div className='transicion-contacto'> 
+                    
                        <img className='icons' src={correo} alt='correo'/> 
                        
                        <a href="mailto:gadetru@gmail.com"> gadetru@gmail.com</a>             
                     </div>
-                    <div> 
+                    <div className='transicion-contacto'> 
                         <img className='icons'src={telefono} alt='telefonito'/> 
                         
                         <a href="tel:+34644172604">+34644172604

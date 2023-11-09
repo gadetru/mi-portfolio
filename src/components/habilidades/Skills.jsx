@@ -7,6 +7,10 @@ import cssIcon from'../../img/css.png'
 import nodeIcon from'../../img/node.png'
 import sassIcon from'../../img/sass.png'
 import mysqlIcon from'../../img/mysql.png'
+import typeScriptIcon from'../../img/typeScript.png'
+import angularIcon from'../../img/angularIcon.png'
+import gitIcon from'../../img/gitIcon.png'
+import mongoIcon from'../../img/mongoIcon.png'
 
 export const Skills = () => {
   return (
@@ -39,8 +43,24 @@ export const Skills = () => {
             <p>Node</p>
         </div>
         <div> 
+            <img alt='mongo' src={mongoIcon}/> 
+            <p>MongoDB</p>
+        </div>
+        <div> 
             <img alt='icono mysql' src={mysqlIcon}/> 
             <p>MySQL</p>
+        </div>
+        <div> 
+            <img alt='icono mysql' src={typeScriptIcon}/> 
+            <p>typeScript</p>
+        </div>
+        <div> 
+            <img alt='Angular' src={angularIcon}/> 
+            <p>Angular</p>
+        </div>
+        <div> 
+            <img alt='github' src={gitIcon}/> 
+            <p>Git Hub</p>
         </div>
       </div>
 

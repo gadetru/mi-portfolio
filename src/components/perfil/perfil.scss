@@ -15,7 +15,15 @@
         object-fit: cover;
         object-position: top;
         margin: 20px;
+
     }
+    .yomismo{
+
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+
+    }
+
+
 
 }
 
@@ -62,6 +70,7 @@
 // CORREO Y TELEFONO
 .contacto-personal{
     margin: 20px;
+   
     div{
         height: 20px;
         padding: 10px;
@@ -83,9 +92,16 @@
         padding-right: 10px;
        
     }
-    }
-
+   }
+   .transicion-contacto{
+    transition: transform 0.2s;
     
+   }
+}
+.transicion-contacto:hover{
+    transform: scale(1.1);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+    border-radius: 15px;
 }
 
 @media (max-width:1000px) {

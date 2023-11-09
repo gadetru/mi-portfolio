@@ -80,7 +80,9 @@ export const Proyectos = ({ filtro }) => {
       <div className="projectos-ppal">
         {filteredProjects.slice(startIndex, endIndex).map((project) => {
           return (
-            <div className="projectos-card" key={project.id}>
+            <a className="projectos-card" href={project.url_despliegue} key={project.id} target="blank">
+            <div  key={project.id}>
+             
               <img alt={project.titulo} src={project.url_imagen}></img>
               <br></br>
               <p>#{project.tag}</p>
@@ -88,10 +90,13 @@ export const Proyectos = ({ filtro }) => {
               <p className="descripcion">{project.descripcion}</p>
 
               <div className="enlaces">
-                <a className="enlace-despliegue" href={project.url_despliegue} target="blank">Web </a>
+                {/* <a className="enlace-despliegue" href={project.url_despliegue} target="blank">Web </a> */}
                 <a className="enlace-codigo" href={project.url_github} target="blank">Código</a>
+                
               </div>
-            </div>);
+              
+            </div>
+            </a>);
         })
         }
       </div>
