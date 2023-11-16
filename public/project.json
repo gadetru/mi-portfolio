@@ -1,7 +1,7 @@
 [
     {
         "url_imagen":"./img/espantapajaro.webp",
-        "tag": "vanilla",
+        "tag": "maquetado",
         "titulo": "404 not found",
         "descripcion": "Primer proyecto, página estática de un error 404",
         "url_github": "https://github.com/gadetru/devchallenges",
@@ -10,7 +10,7 @@
     },
     {
         "url_imagen":"./img/my-team1.webp",
-        "tag": "vanilla",
+        "tag": "maquetado",
         "titulo": "work team",
         "descripcion": "maquetación sencilla de una vista con un equipo de trabajo, práctica de html y css",
         "url_github": "https://github.com/gadetru/my-team-challenge",
@@ -23,7 +23,7 @@
         "titulo": "Consultora",
         "descripcion": "Maquetación para la portada de una consultora, decoración de interior. Utilizando React como framework",
         "url_github": "https://github.com/gadetru/consultant",
-        "url_despliegue": "https://app.netlify.com/sites/remarkable-choux-fabfb7/overview",
+        "url_despliegue": "https://remarkable-choux-fabfb7.netlify.app/",
         "id": 3
     },
     {
@@ -50,8 +50,8 @@
         "tag": "React",
         "titulo": "Check out",
         "descripcion": "Ejemplo de carrito de compra para una tienda ",
-        "url_github": "https://beamish-starlight-4723bc.netlify.app/",
-        "url_despliegue": "https://noloencuentro.netlify.app/",
+        "url_github": "https://github.com/gadetru/checkout-form",
+        "url_despliegue": "https://beamish-starlight-4723bc.netlify.app/",
         "id": 6
     },
     {
