@@ -13,7 +13,7 @@ export const Experiencia = () => {
             Creación del proyecto digital Nükrum basado en tratamientos médicos
             innovadores.
           </li>
-          <li>Tecnologías: HTML,SASS,NodeJS,React,MySQL,Azure,Bitbucket,figma,</li>
+          <li>Tecnologías: HTML, SASS, NodeJS, React, MySQL, Azure, Bitbucket, figma.</li>
         </ul>
       </div>
       <div className="lugares">
@@ -30,7 +30,7 @@ export const Experiencia = () => {
             peticiones del servidor.
           </li>
           <li>Gestión y diseño de la base de datos.</li>
-          <li>Tecnologías: HTML,SASS,NodeJS,React,MySQL,GitHub,figma,SCRUM,</li>
+          <li>Tecnologías: HTML, SASS, NodeJS, React, MySQL, GitHub, figma, SCRUM</li>
         </ul>
       </div>
       <div className="idiomas">
