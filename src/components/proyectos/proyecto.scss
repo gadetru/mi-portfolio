@@ -1,5 +1,6 @@
 @import '../../app.scss';
 .projectos-ppal{
+    z-index: -1000;
     display: flex;
     justify-content: center;
     gap: 15px;
