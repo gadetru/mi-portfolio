@@ -10,6 +10,30 @@
     box-sizing: border-box;
    
 }
+
+.projectos-card::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+/* Estilo del riel de la barra de desplazamiento */
+.projectos-card::-webkit-scrollbar-track {
+    background-color: $Blue-1; /* Color del riel */
+    border-radius: 0 12px 12px 0;
+}
+
+/* Estilo del pulgar (la parte móvil) de la barra de desplazamiento */
+.projectos-card::-webkit-scrollbar-thumb {
+    background-color: #808080; /* Color del pulgar */
+    border-radius: 5px; /* Bordes redondeados del pulgar */
+    border-radius: 0 12px 12px 0;
+
+}
+
+/* Estilo del pulgar cuando se está moviendo */
+.projectos-card::-webkit-scrollbar-thumb:hover {
+    background-color: #423f3f;
+    border-radius: 0 12px 12px 0;
+}
 .projectos-card{
     text-decoration:  none;
     display: flex;
@@ -17,6 +41,7 @@
     width: 25%;
     height: 100%;
     min-height: 500px;
+    max-height: 500px;
     box-sizing: border-box;
     border-radius: 12px;
     background-color:$Gray-1;
@@ -24,8 +49,10 @@
     align-items: flex-start;
     padding: 10px 20px 10px 20px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-
-    transition: transform 0.1s; /* Agrega una transición para suavizar el cambio */
+    box-sizing: border-box;
+    overflow: auto;
+    overflow-x: hidden;
+    transition: transform 0.3s; /* Agrega una transición para suavizar el cambio */
     
     img{
         

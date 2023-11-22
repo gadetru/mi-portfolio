@@ -36,15 +36,15 @@ export const Experiencia = () => {
       <div className="idiomas">
               <h2>Idiomas:</h2>
       <div>
-        <h3>Castellano</h3>
+        <h3>Castellano:</h3>
         <p>Lengua materna</p>
       </div>
       <div>
-        <h3>Alemán.</h3>
+        <h3>Alemán:</h3>
         <p>Nivel B2 ,experiencia laboral en el país de 7 años.</p>
       </div>
       <div>
-        <h3>Inglés</h3>
+        <h3>Inglés:</h3>
         <p>Nivel básico.</p>
       </div>
       </div>
