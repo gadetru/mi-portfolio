@@ -1,9 +1,9 @@
 ---
 name: spec-impl
-description: Implementa un spec aprobado de specs/ paso a paso en rama local aparte, con pausa y commit por paso y checklist final sin auto-marcar
+description: Implementa un spec aprobado de specs/ paso a paso en rama local aparte, con pausa por paso (commit manual del usuario) y checklist final sin auto-marcar
 ---
 
-Implementa el spec indicado paso a paso. Uso: `/spec-impl specs/<nombre>-spec.md`.
+Implementa el spec indicado paso a paso. Uso: `/spec-impl specs/<NNN>-<nombre>-spec.md` (ej: `/spec-impl specs/001-mi-cambio-spec.md`).
 
 ### 0. Gate de aprobado (bloqueante, antes de nada)
 1. Lee el fichero del spec con `read`. Si `$ARGUMENTS` viene vacío, pregunta qué spec implementar y detente hasta tener respuesta.
@@ -13,27 +13,23 @@ Implementa el spec indicado paso a paso. Uso: `/spec-impl specs/<nombre>-spec.md
 
 ### 1. Preparar trabajo en rama local
 1. Detecta el contexto (solo lectura): `git branch --show-current` y `git status --porcelain`. Parte siempre desde la rama actual como base.
-2. Deriva `<nombre>` del spec: nombre del fichero sin `specs/` ni `-spec.md`, saneado (minúsculas, espacios/_ a `-`, solo `[a-z0-9-/.]`).
-3. Prefijo de rama: `feat/` por defecto, `fix/` si el spec es una corrección. Rama final: `<prefijo>/<nombre>` (ej: `feat/filtro-todo`).
+2. Deriva `<nombre>` del spec: nombre del fichero sin `specs/` ni `-spec.md`, saneado (minúsculas, espacios/_ a `-`, solo `[a-z0-9-/.]`). Conserva el prefijo numérico del spec (ej: `001-mi-cambio`).
+3. Rama de trabajo: el mismo `<nombre>` del spec, sin prefijos `feat/` ni `fix/`. Rama final: `<nombre>` (ej: `001-mi-cambio`).
 4. Crea la rama y cambia a ella desde la raíz del proyecto:
    `git switch -c <rama>`
    Esto arrastra automáticamente los cambios sin commitear a la nueva rama (incluido el caso de estar en `main/master` con dirty). No hagas `stash` automático.
 5. Si `<rama>` ya existe, usa `git switch <rama>` y avisa de la reutilización. Si el `switch` falla por conflicto con cambios sin commitear, detente e informa sin forzar ni commitear.
-6. Prohibido `git worktree add`, `.worktrees/`, el parámetro `workdir` y `cd`. Todo el código y commits ocurren en la raíz del proyecto, en la rama de trabajo creada.
+6. Prohibido `git worktree add`, `.worktrees/`, el parámetro `workdir` y `cd`. Todo el código ocurre en la raíz del proyecto, en la rama de trabajo creada. Los commits los haces tú a mano: el agente nunca ejecuta `git add` ni `git commit`.
 
-### 2. Bucle por pasos (pausa + commit por paso)
+### 2. Bucle por pasos (pausa por paso, commit manual)
 Lee `## 6. Plan de tareas` del spec y ejecuta en orden, un paso cada vez:
 1. Relee la sección de diseño del spec (`## 4`) y los gotchas de `AGENTS.md` antes de cada paso: `fetch("/project.json")` (no `../../`), `public/_redirects` único válido, `vite.config.js` mínimo, `index.html` (`gtag G-ZQXX3KJ4TC`, favicon `devchallenges.png`, entry `/src/main.jsx`), no reintroducir deuda (`@emotion/*`, `@fontsource/roboto`, `count` sin usar, nieve con URLs `http://`).
 2. Si la tarea toca React, aplica la skill `react-docs` (verifica en `es.react.dev`, cita URL).
 3. Implementa SOLO esa tarea. No avances tareas futuras ni agrupes pasos.
 4. Verifica en la raíz del proyecto: `npm run lint` (cero warnings) + `npm run build` (`dist/` OK). Si no hay `node_modules`, avisa y sigue sin bloquear.
 5. Informa: qué cambió (`fichero:línea`), diff resumido, resultado de la verificación.
-6. Pausa con `question`: opciones `seguir / ajustar / reintentar / parar`.
-   - `seguir` → haz `git commit` en la raíz con mensaje `"<nombre-spec>: paso N - <qué>"` y pasa al siguiente paso.
-   - `ajustar` → aplica la corrección pedida, vuelve a verificar, vuelve a pausar sin commitear aún.
-   - `reintentar` → rehace el paso.
-   - `parar` → detente sin más commits e informa estado.
-7. Prohibido commitear sin tu `seguir` explícito.
+6. Pausa sin opciones: detente e informa `Revisa los cambios y haz commit a mano; respóndeme en el chat para seguir, corregir o parar.` Continúa solo con tu respuesta en texto libre (seguir, corrección o parar). Sin herramienta `question`, sin opciones.
+7. Prohibido commitear: los commits los haces tú a mano. El agente nunca ejecuta `git add` ni `git commit`.
 
 ### 3. Checklist final (en el mismo spec, sin auto-marcar)
 1. Al terminar todos los pasos (o al parar), añade al final del MISMO fichero del spec la sección `## 9. Checklist verificación` si no existe.
@@ -47,4 +43,4 @@ Lee `## 6. Plan de tareas` del spec y ejecuta en orden, un paso cada vez:
    - No crees ficheros `*-checks.md` separados ni anexos en otro sitio.
 
 ### 4. Cierre
-Informa siempre: rama de trabajo creada, lista de commits de la rama (`git log --oneline`), path del spec con la checklist añadida y `Marca los checks y el Estado a mano cuando los verifiques en navegador + preview.`
+Informa siempre: rama de trabajo creada, lista de commits de la rama (`git log --oneline`), path del spec con la checklist añadida (cambio sin commitear, para tu commit manual) y `Marca los checks y el Estado a mano cuando los verifiques en navegador + preview.`

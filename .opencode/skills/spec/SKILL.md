@@ -5,11 +5,13 @@ description: Genera spec de implementación (plan) sin escribir código. Usar cu
 
 Genera un plan de implementación Spec-Driven. NO escribas código.
 
-Nombre: usa `$ARGUMENTS` si viene (ej: `/spec fix-fetch-project-json`). Si viene vacío, deriva un nombre corto kebab-case del contexto de la conversación (ej: `feat-filtro-todo`, `fix-fetch`).
+Nombre: usa `$ARGUMENTS` si viene (ej: `/spec fix-fetch-project-json`). Si viene vacío, deriva un nombre corto kebab-case del contexto de la conversación (ej: `filtro-todo`, `fetch`).
 
 Sanea el nombre: minúsculas, espacios/_ a `-`, solo `[a-z0-9-/.]`, sin espacios.
 
-Destino: `specs/<nombre>-spec.md`. Si `specs/` no existe, créalo.
+Numeración: cada spec lleva prefijo secuencial de 3 dígitos. Lista con `glob` los `specs/*-spec.md`, extrae los prefijos `^(\d+)-` y elige el menor `NNN` libre empezando en `001` (los números de specs borrados se reutilizan). Si `$ARGUMENTS` ya trae prefijo numérico (`/spec 002-mi-cambio`), respétalo tras sanear.
+
+Destino: `specs/<NNN>-<nombre>-spec.md` (ej: `specs/002-fetch-project-json-spec.md`). Si `specs/` no existe, créalo. Si el destino ya existe, no sobrescribas: avisa y detente hasta tener otro nombre.
 
 Ejecuta estos 5 pasos, en orden, solo con herramientas de lectura (`read`, `glob`, `grep`, `bash` read-only):
 
@@ -46,7 +48,7 @@ Lista numerada de tareas pequeñas, cada una con fichero/s implicado/s. Última 
 - Verificación = `npm run lint` (cero warnings) + `npm run build` (`dist/` OK). Sin tests ni typecheck en este repo.
 
 ### 5. Generar spec y parar
-Escribe `specs/<nombre>-spec.md` con esta plantilla:
+Escribe `specs/<NNN>-<nombre>-spec.md` con esta plantilla:
 
 ```md
 # <título>

@@ -52,3 +52,12 @@ Estado: aprobado
 ## Preguntas abiertas
 - ¿Alguna preferencia de estilo de icono (plano, 3D, monocromo) para que los 4 combinen con los 11 actuales?
 - Si el logo de OpenCode no tiene asset libre utilizable, ¿qué icono alternativo aceptas?
+
+## 9. Checklist verificación
+- [x] La card Tecnologías muestra 15 items: los 11 actuales + Java, OpenCode, C#, .NET al final y en ese orden.
+- [x] Cada item nuevo tiene icono visible y etiqueta exacta (`Java`, `OpenCode`, `C#`, `.NET`).
+- [x] Iconos con tamaño y aspecto homogéneos respecto a los actuales (48px en vista).
+- [x] Sin regresión visual del grid `box1-box7` en desktop ni a `<=720px`.
+- [ ] `lint` cero warnings y `build` genera `dist/`.
+- [ ] lint cero warnings
+- [ ] build genera dist/

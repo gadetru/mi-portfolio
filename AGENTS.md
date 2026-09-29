@@ -26,8 +26,8 @@ No hay suite de tests ni typecheck. Verificación = `lint` + `build`.
 
 ## Skills y comandos repo-locales (`.opencode/`)
 
-- `/spec` → skill `spec`: genera plan en `specs/<nombre>-spec.md` (`Estado: Borrador`, solo lectura, sin tocar código). `specs/` hoy solo tiene `.gitkeep`.
-- `/spec-impl` → skill `spec-impl`: implementa un spec `Aprobado` paso a paso **en rama local** (`git switch -c <feat|fix>/<nombre>` desde la rama actual, arrastra cambios sin commitear; pausa + commit por paso; checklist `## 9` sin auto-marcar, la marca el usuario a mano).
+- `/spec` → skill `spec`: genera plan en `specs/<NNN>-<nombre>-spec.md` (menor `NNN` libre desde `001`, reutilizando huecos; `Estado: Borrador`, solo lectura, sin tocar código).
+- `/spec-impl` → skill `spec-impl`: implementa un spec `Aprobado` paso a paso **en rama local** (`git switch -c <NNN>-<nombre>` con el código del spec, desde la rama actual, arrastra cambios sin commitear; pausa por paso sin opciones, commits manuales del usuario; checklist `## 9` sin auto-marcar, la marca el usuario a mano).
 - `/worktree` → `.opencode/commands/worktree.md`: crea worktree + rama sin cambiar de rama. Sin worktrees activos ahora.
 - Skill `react-docs`: consultar `es.react.dev` (con URL citada) siempre que se toque React.
 
