@@ -1,5 +1,5 @@
 ---
-description: Implementa un spec aprobado paso a paso en worktree+rama aparte
+description: Implementa un spec aprobado paso a paso en rama local aparte
 ---
 
 Lee `.opencode/skills/spec-impl/SKILL.md` y ejecútalo con `$ARGUMENTS` como path del spec (ej: `/spec-impl specs/mi-cambio-spec.md`).
