@@ -11,6 +11,10 @@ import typeScriptIcon from'../../img/typeScript.png'
 import angularIcon from'../../img/angularIcon.png'
 import gitIcon from'../../img/gitIcon.png'
 import mongoIcon from'../../img/mongoIcon.png'
+import javaIcon from'../../img/java.png'
+import openCodeIcon from'../../img/opencode.png'
+import csharpIcon from'../../img/csharp.png'
+import dotnetIcon from'../../img/dotnet.png'
 
 export const Skills = () => {
   return (
@@ -61,6 +65,22 @@ export const Skills = () => {
         <div> 
             <img alt='github' src={gitIcon}/> 
             <p>Git Hub</p>
+        </div>
+        <div> 
+            <img alt='icono java' src={javaIcon}/> 
+            <p>Java</p>
+        </div>
+        <div> 
+            <img alt='icono opencode' src={openCodeIcon}/> 
+            <p>OpenCode</p>
+        </div>
+        <div> 
+            <img alt='icono csharp' src={csharpIcon}/> 
+            <p>C#</p>
+        </div>
+        <div> 
+            <img alt='icono dotnet' src={dotnetIcon}/> 
+            <p>.NET</p>
         </div>
       </div>
 
