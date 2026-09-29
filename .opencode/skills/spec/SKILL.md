@@ -33,6 +33,9 @@ Antes de redactar, llama a `question` con 5-10 preguntas. Mitad arquitectura, mi
 - Estilos: ¿nuevo `.scss` o reutiliza variables existentes? ¿imágenes en `public/img/` o `src/img/`?
 - Responsive: ¿afecta a `itemsPerPage 1/2/3/4` o breakpoints de cards (`<=480/800/1200`)?
 - Alcance: objetivo, no-objetivos, criterios de aceptación verificables en navegador, verificación `lint + build`.
+- Dependencias: ¿depende este spec de otro spec anterior de `specs/`? ¿cuál y por qué (orden de implementación)?
+- Alcance fino: ¿qué entra y qué NO entra explícitamente en este spec?
+- Futuro: ¿qué mejoras, errores extra o ideas detectadas quedan fuera para un posible spec futuro?
 
 Si falta info, pregunta en vez de asumir. No avances al paso 3 sin respuestas o sin que el usuario te diga "sigue con supuestos".
 
@@ -48,23 +51,39 @@ Lista numerada de tareas pequeñas, cada una con fichero/s implicado/s. Última 
 - Verificación = `npm run lint` (cero warnings) + `npm run build` (`dist/` OK). Sin tests ni typecheck en este repo.
 
 ### 5. Generar spec y parar
-Escribe `specs/<NNN>-<nombre>-spec.md` con esta plantilla:
+Escribe `specs/<NNN>-<nombre>-spec.md` con esta plantilla (la checklist con checkboxes es siempre la ÚLTIMA sección):
 
 ```md
 # <título>
 Estado: Borrador
-## 1. Objetivo / No-objetivos
-## 2. Contexto arquitectura (App.jsx, boxes, filtro, project.json, scss)
-## 3. Requisitos funcionales + no-funcionales
-## 4. Diseño (componentes, props/estado, estilos, datos, responsive)
+Depende de: <Ninguno | specs/NNN-<nombre>-spec.md (+ motivo)>
+Fecha de creación: <YYYY-MM-DD, fecha actual>
+Descripción: <1-3 líneas: qué se busca hacer>
+## 1. Objetivo
+## 2. Alcance (entra / no entra)
+## 3. Contexto arquitectura (App.jsx, boxes, filtro, project.json, scss)
+## 4. Requisitos funcionales + no-funcionales
 ## 5. Criterios de aceptación verificables
-## 6. Plan de tareas
-## 7. Verificación (lint cero warnings + build dist/)
-## 8. Riesgos / No romper (ver paso 3)
+## 6. Diseño (componentes, props/estado, estilos, datos, responsive)
+## 7. Plan de tareas
+## 8. Verificación (lint cero warnings + build dist/)
+## 9. Riesgos / No romper
+## 10. Futuros specs (mejoras detectadas, errores extra, ideas — no entran aquí)
 ## Preguntas abiertas
+## 11. Checklist verificación (última, checkboxes listos para /verifier)
 ```
 
-El spec nace como `Estado: Borrador`. Solo tú puedes cambiarlo a mano a `Estado: Aprobado` para desbloquear `/spec-impl`. El agente nunca cambia el `Estado`.
+Cabecera:
+- `Estado`: nace como `Borrador`. Solo el usuario lo cambia a mano a `Aprobado` para desbloquear `/spec-impl`. El agente nunca cambia el `Estado`.
+- `Depende de`: sale del interrogatorio (paso 2). Si no depende de ningún spec anterior, escribe `Ninguno`.
+- `Fecha de creación`: fecha actual en formato `YYYY-MM-DD` (obtenla con `bash` read-only, ej: `date +%F`, o del contexto del sistema).
+- `Descripción`: 1-3 líneas, sin código.
+
+Alcance (`## 2`): dos listas explícitas, `Entra:` y `No entra:`. Lo que no entra no se implementa en este spec.
+
+Futuros specs (`## 10`): cada mejora, error extra o idea detectada que quede fuera, en una línea con dónde se detectó (`fichero:línea` si aplica). Sirve de cantera para futuros specs; al convertirse en spec, enlázalo (`specs/NNN-...-spec.md`).
+
+Checklist final (`## 11`): un `- [ ]` por cada criterio de `## 5` + uno para `lint` y otro para `build`. Todos nacen en `[ ]`: los marca `/verifier` con evidencia o el usuario a mano. Nada fuera de la checklist se verifica.
 
 Reglas estrictas:
 - NO uses `edit`, `write` (salvo para el spec), ni `bash` que modifique. No hagas `cd`, `checkout`, `switch`, commit ni cambios en `src/`, `public/`, `index.html`, `vite.config.js`.
