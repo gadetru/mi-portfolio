@@ -87,3 +87,15 @@ Estado: aprobado
 ## Preguntas abiertas
 - ¿Se quiere mensaje "Sin resultados" con estilo de card o basta con `0 / 0` + botones deshabilitados?
 - Tras desinstalar `@emotion`/`@fontsource`, ¿`npm install` + `package-lock.json` se commitea en el mismo paso o separado?
+
+## 9. Checklist verificación
+- [ ] `npm run lint` → 0 errors, 0 warnings
+- [ ] `npm run build` genera `dist/` sin errores; `npm run preview` sirve la app
+- [ ] En `http://localhost:5173`: filtro Maquetación/React/JS/Node/Todo filtra y pagina (`‹ actual/total ›`); con filtro sin resultados muestra estado vacío coherente (no `1 / 0`)
+- [ ] Network: `GET /project.json` 200 y `GET /img/*.webp|png` 200 en dev y preview; imágenes de cards visibles
+- [ ] Clic en card Web abre despliegue y clic en Código abre GitHub, cada uno en pestaña nueva con `rel` correcto; sin `<a>` anidado en el DOM
+- [ ] Consola sin mixed-content ni 404 de `devchallenges.png`, `project.json` o nieve; favicon visible
+- [ ] `public/_redirects` intacto con `/* /index.html 200`; `src/_redirects` no existe
+- [ ] `lang="es"` en `index.html`; nieve/Merienda eliminadas (fondo plano); grid `box1-box7` sin regresión en desktop y `<=720px`
+- [ ] lint cero warnings
+- [ ] build genera dist/
