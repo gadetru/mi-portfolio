@@ -1,4 +1,3 @@
-import React from 'react'
 import './hobbies.scss'
 import bici from '../../img/bici2.png'
 import monte from '../../img/montaña.jpg'

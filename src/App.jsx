@@ -11,7 +11,6 @@ import { Footer } from './components/footer/Footer'
 
 
 function App() {
-  const [count, setCount] = useState(0)
   const [filtro, setFiltro] = useState(""); // Nuevo estado para el filtro
 
   return (

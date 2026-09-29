@@ -1,4 +1,5 @@
-import React,{useState} from 'react'
+import {useState} from 'react'
+import PropTypes from 'prop-types'
 import './filtrado.scss'
 
 export const Filtrado = ({onFilterChange}) => {
@@ -21,4 +22,8 @@ export const Filtrado = ({onFilterChange}) => {
       {/* Agrega botones adicionales según tus tags */}
     </div>
   )
+}
+
+Filtrado.propTypes = {
+  onFilterChange: PropTypes.func.isRequired
 }

@@ -1,4 +1,3 @@
-import React from 'react'
 import './skills.scss'
 import reactIcon from'../../img/react.png'
 import javaScripIcon from'../../img/javascript.png'

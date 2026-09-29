@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import PropTypes from 'prop-types';
 
 import './proyecto.scss'
 
 import flechaIzquierda from '../../img/flecha-izquierda.png'
 import flechaDerecha from '../../img/flecha-correcta.png'
 
-export const Proyectos = ({ filtro }) => {
+export const Proyectos = ({ filtro = "" }) => {
   const [projects, setProjects] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   // const itemsPerPage = 4; // Cambia esto según la cantidad de elementos por página que desees.
 
   
@@ -59,10 +62,20 @@ export const Proyectos = ({ filtro }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch("../../project.json");
-      
-      const result = await data.json();
-      setProjects(result);
+      try {
+        setLoading(true);
+        setError(null);
+        const data = await fetch("/project.json");
+        if (!data.ok) {
+          throw new Error(`Error ${data.status} al cargar proyectos`);
+        }
+        const result = await data.json();
+        setProjects(result);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchData();
@@ -75,48 +88,74 @@ export const Proyectos = ({ filtro }) => {
     setCurrentPage(newPage);
   };
 
+  if (loading) {
+    return (
+      <div>
+        <p>Cargando proyectos...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div>
+        <p>Error al cargar proyectos: {error}</p>
+      </div>
+    );
+  }
+
+  const isEmpty = filteredProjects.length === 0;
+  const displayPage = isEmpty ? 0 : currentPage;
+
   return (
     <div>
       <div className="projectos-ppal">
-        {filteredProjects.slice(startIndex, endIndex).map((project) => {
-          return (
-            <a className="projectos-card" href={project.url_despliegue} key={project.id} target="blank">
-            <div  key={project.id}>
-             
-              <img alt={project.titulo} src={project.url_imagen}></img>
-              <br></br>
-              <p>#{project.tag}</p>
-              <h2> {project.titulo}</h2>
-              <p className="descripcion">{project.descripcion}</p>
+        {isEmpty ? (
+          <p>Sin resultados</p>
+        ) : (
+          filteredProjects.slice(startIndex, endIndex).map((project) => {
+            return (
+              <article className="projectos-card" key={project.id}>
+                <div>
 
-              <div className="enlaces">
-                {/* <a className="enlace-despliegue" href={project.url_despliegue} target="blank">Web </a> */}
-                <a className="enlace-codigo" href={project.url_github} target="blank">Código</a>
-                
-              </div>
-              
-            </div>
-            </a>);
-        })
-        }
+                  <img alt={project.titulo} src={project.url_imagen} />
+                  <br />
+                  <p>#{project.tag}</p>
+                  <h2> {project.titulo}</h2>
+                  <p className="descripcion">{project.descripcion}</p>
+
+                  <div className="enlaces">
+                    <a className="enlace-codigo" href={project.url_despliegue} target="_blank" rel="noreferrer noopener">Web</a>
+                    <a className="enlace-codigo" href={project.url_github} target="_blank" rel="noreferrer noopener">Código</a>
+
+                  </div>
+
+                </div>
+              </article>);
+          })
+        )}
       </div>
 
       <div className="botones-paginas">
         <button
           onClick={() => handlePageChange(currentPage - 1)}
-          disabled={currentPage === 1}
+          disabled={isEmpty || currentPage === 1}
         >
           <img alt="volver" src={flechaIzquierda} />
-         
+
         </button>
-        <span> {currentPage} / {totalPages}</span>
+        <span> {displayPage} / {totalPages}</span>
         <button
           onClick={() => handlePageChange(currentPage + 1)}
-          disabled={endIndex >= filteredProjects.length || currentPage === totalPages}
+          disabled={isEmpty || endIndex >= filteredProjects.length || currentPage === totalPages}
         >
-          <img alt="alante" src={flechaDerecha} />
+          <img alt="siguiente" src={flechaDerecha} />
         </button>
       </div>
     </div>
   );
+};
+
+Proyectos.propTypes = {
+  filtro: PropTypes.string
 };
