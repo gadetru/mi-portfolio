@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
+import PropTypes from 'prop-types';
 
 import './proyecto.scss'
 
 import flechaIzquierda from '../../img/flecha-izquierda.png'
 import flechaDerecha from '../../img/flecha-correcta.png'
 
-export const Proyectos = ({ filtro }) => {
+export const Proyectos = ({ filtro = "" }) => {
   const [projects, setProjects] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   // const itemsPerPage = 4; // Cambia esto según la cantidad de elementos por página que desees.
@@ -119,4 +120,8 @@ export const Proyectos = ({ filtro }) => {
       </div>
     </div>
   );
+};
+
+Proyectos.propTypes = {
+  filtro: PropTypes.string
 };
