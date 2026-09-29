@@ -1,5 +1,5 @@
 # Fix errores heredados + limpieza completa (lint, fetch, nieve, higiene)
-Estado: aprobado
+Estado: implementado
 
 ## 1. Objetivo / No-objetivos
 - Objetivo: dejar `npm run lint` en verde (14 errors actuales → 0) y corregir bugs runtime/deuda heredada sin cambiar el diseño visual: `fetch` frágil, rutas `img`, `<a>` anidado + `target=blank`, paginación `1/0`, `rel noopener`, nieve `http://`, redirects duplicado, favicon, `lang`, deps muertas, imports muertos.
@@ -89,13 +89,13 @@ Estado: aprobado
 - Tras desinstalar `@emotion`/`@fontsource`, ¿`npm install` + `package-lock.json` se commitea en el mismo paso o separado?
 
 ## 9. Checklist verificación
-- [ ] `npm run lint` → 0 errors, 0 warnings
-- [ ] `npm run build` genera `dist/` sin errores; `npm run preview` sirve la app
-- [ ] En `http://localhost:5173`: filtro Maquetación/React/JS/Node/Todo filtra y pagina (`‹ actual/total ›`); con filtro sin resultados muestra estado vacío coherente (no `1 / 0`)
-- [ ] Network: `GET /project.json` 200 y `GET /img/*.webp|png` 200 en dev y preview; imágenes de cards visibles
-- [ ] Clic en card Web abre despliegue y clic en Código abre GitHub, cada uno en pestaña nueva con `rel` correcto; sin `<a>` anidado en el DOM
-- [ ] Consola sin mixed-content ni 404 de `devchallenges.png`, `project.json` o nieve; favicon visible
-- [ ] `public/_redirects` intacto con `/* /index.html 200`; `src/_redirects` no existe
-- [ ] `lang="es"` en `index.html`; nieve/Merienda eliminadas (fondo plano); grid `box1-box7` sin regresión en desktop y `<=720px`
-- [ ] lint cero warnings
-- [ ] build genera dist/
+- [x] `npm run lint` → 0 errors, 0 warnings
+- [x] `npm run build` genera `dist/` sin errores; `npm run preview` sirve la app
+- [x] En `http://localhost:5173`: filtro Maquetación/React/JS/Node/Todo filtra y pagina (`‹ actual/total ›`); con filtro sin resultados muestra estado vacío coherente (no `1 / 0`)
+- [x] Network: `GET /project.json` 200 y `GET /img/*.webp|png` 200 en dev y preview; imágenes de cards visibles
+- [x] Clic en card Web abre despliegue y clic en Código abre GitHub, cada uno en pestaña nueva con `rel` correcto; sin `<a>` anidado en el DOM
+- [x] Consola sin mixed-content ni 404 de `devchallenges.png`, `project.json` o nieve; favicon visible
+- [x] `public/_redirects` intacto con `/* /index.html 200`; `src/_redirects` no existe
+- [x] `lang="es"` en `index.html`; nieve/Merienda eliminadas (fondo plano); grid `box1-box7` sin regresión en desktop y `<=720px`
+- [x] lint cero warnings
+- [x] build genera dist/

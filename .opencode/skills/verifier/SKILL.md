@@ -17,11 +17,11 @@ Verifica el spec indicado criterio por criterio. Uso: `/verifier specs/<NNN>-<no
 4. Relee los gotchas de `AGENTS.md` antes de evaluar: `fetch("/project.json")` (no `../../`), `public/_redirects` único válido, `vite.config.js` mínimo, `index.html` (`gtag G-ZQXX3KJ4TC`, favicon `devchallenges.png`, entry `/src/main.jsx`), no reintroducir deuda (`@emotion/*`, `@fontsource/roboto`, `count` sin usar, nieve con URLs `http://`).
 
 ### 2. Evaluación criterio por criterio (solo lectura, sin editar el spec)
-1. Base del repo (siempre): ejecuta en la raíz `npm run lint` (cero warnings) y `npm run build` (`dist/` OK). Si no hay `node_modules`, avisa y sigue sin bloquear.
+1. Base del repo (siempre): ejecuta en la raíz `npm run lint` (cero warnings) y `npm run build` (`dist/` OK). Si no hay `node_modules`, avisa y sigue sin bloquear. Un solo intento por comando: si falla, anota la salida y sigue (ver `### 5`).
 2. Código: verifica con `read`/`grep` citando `fichero:línea` (props, fetch absoluto, rutas `/img/`, `<article>` sin `<a>` anidado, `target="_blank" rel="noreferrer noopener"`, `key` única, `0 / 0` + botones deshabilitados, `lang="es"`, fondo plano, grid `box1-box7`).
-3. Si el criterio toca React (componente, hook, JSX, props, estado, efectos), aplica la skill `react-docs`: verifica en `es.react.dev` y cita la URL usada.
+3. Si el criterio toca React (componente, hook, JSX, props, estado, efectos), aplica la skill `react-docs`: verifica en `es.react.dev` y cita la URL usada. Si el `webfetch` falla 2 veces, cita la URL como pendiente de comprobación manual y sigue (ver `### 5`).
 4. Si el criterio toca una librería, framework, SDK, API o tool (React, Vite, Sass, etc.), usa el MCP `context7`: `resolve-library-id` y luego `query-docs` con el ID exacto, y cita ID + URL. Vale también para React cuando aporte más que `react-docs`.
-5. Si el criterio exige prueba visual o en web (filtro, paginación, estado vacío, enlaces, favicon, consola, network, responsive `<=720px`), usa el MCP `playwright` cuando esté disponible: `http://localhost:5173` (dev) + `npm run preview`, capturas, consola (mixed-content/404), network (`/project.json`, `/img/*`, favicon) y DOM. Si no hay MCP `playwright`, no marques ese criterio: déjalo en `[ ]` con la instrucción manual de comprobación en navegador.
+5. Si el criterio exige prueba visual o en web (filtro, paginación, estado vacío, enlaces, favicon, consola, network, responsive `<=720px`), usa el MCP `playwright` cuando esté disponible: `http://localhost:5173` (dev) + `npm run preview`, capturas, consola (mixed-content/404), network (`/project.json`, `/img/*`, favicon) y DOM. Si no hay MCP `playwright`, no marques ese criterio: déjalo en `[ ]` con la instrucción manual de comprobación en navegador. Si el servidor o el navegador se resisten (ver `### 5`), no insistas: evidencia por código + `[ ]` con pasos manuales.
 
 ### 3. Marcado (única escritura permitida, solo en `## 9` del MISMO spec)
 1. Cambia `[ ]` → `[x]` ÚNICAMENTE en los criterios con evidencia passing (comando verde, `fichero:línea` confirmado, captura/log adjunto).
@@ -34,3 +34,13 @@ Verifica el spec indicado criterio por criterio. Uso: `/verifier specs/<NNN>-<no
 
 ### 4. Informe
 Publica tabla `criterio → ✅/❌ + evidencia` (salida de `lint`/`build`, `fichero:línea`, URL de `react-docs`/`context7`, captura o paso manual pendiente de `playwright`) y cierra con `Revisa y haz commit a mano del spec marcado.`
+
+### 5. Política anti-bloqueo (aplica a todos los pasos anteriores)
+1. Máximo 2 intentos por vía: si un comando, servidor o herramienta falla 2 veces con el mismo error, NO hay tercer intento por esa vía. Cambia de vía o salta al siguiente criterio.
+2. Timeouts cortos, nunca esperas largas: `bash` que arranque servidores con espera ≤ 15s; `playwright_browser_wait_for` con `time` ≤ 10; `webfetch` con `timeout` ≤ 60. Prohibido el polling en loop (reintentar `navigate`, `netstat`, `curl` una y otra vez).
+3. Vías alternativas antes de dar un criterio por perdido:
+   - Si `npm run dev` no levanta: usa `npm run preview` sobre el `dist/` del paso 2 (el `build` ya pasó) y verifica ahí.
+   - Si `playwright` no conecta a `localhost`: verifica ese criterio solo por código (`read`/`grep` con `fichero:línea`) y déjalo en `[ ]` con pasos manuales de comprobación en navegador.
+   - Si `webfetch` a `es.react.dev` falla: usa `websearch` para la URL o cita la referencia como pendiente de comprobación manual.
+4. Orden de trabajo: primero lo rápido y local (`lint` + `build` + código), luego `docs`, el navegador al final. Si el navegador se atasca, el resto del informe ya está completo.
+5. Todo bloqueo se anota y se abandona: `bloqueado tras 2 intentos: <motivo>` en el informe, criterio en `[ ]`, y a seguir con el siguiente. El informe final lista cada bloqueo con su causa y su instrucción manual.

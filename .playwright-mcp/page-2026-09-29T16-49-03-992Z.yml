@@ -1,0 +1,158 @@
+- generic [ref=f1e3]:
+  - generic [ref=f1e5]:
+    - img "micareto" [ref=f1e6]
+    - generic [ref=f1e7]:
+      - generic [ref=f1e8]:
+        - generic [ref=f1e9]:
+          - heading "Gabriel Delgado Trujillo" [level=2] [ref=f1e10]
+          - heading "Full Stack developer" [level=3] [ref=f1e11]
+        - generic [ref=f1e12]:
+          - generic [ref=f1e13]:
+            - img "correo" [ref=f1e14]
+            - link "gadetru@gmail.com" [ref=f1e15] [cursor=pointer]:
+              - /url: mailto:gadetru@gmail.com
+          - generic [ref=f1e16]:
+            - img "telefonito" [ref=f1e17]
+            - link "+34644172604" [ref=f1e18] [cursor=pointer]:
+              - /url: tel:+34644172604
+      - paragraph [ref=f1e19]: Soy un joven apasionado por la programación, en constante búsqueda de conocimiento como desarrollador full stack. Mi cartera refleja mi dedicación para crear soluciones tecnológicas innovadoras y eficientes mientras sigo aprendiendo y creciendo en este emocionante campo.
+  - generic [ref=f1e21]:
+    - heading "Tecnologías:" [level=2] [ref=f1e22]
+    - generic [ref=f1e23]:
+      - generic [ref=f1e24]:
+        - img "icono react" [ref=f1e25]
+        - paragraph [ref=f1e26]: React
+      - generic [ref=f1e27]:
+        - img "icono javaScript" [ref=f1e28]
+        - paragraph [ref=f1e29]: javaScript
+      - generic [ref=f1e30]:
+        - img "icono HTML" [ref=f1e31]
+        - paragraph [ref=f1e32]: HTML
+      - generic [ref=f1e33]:
+        - img "CSS" [ref=f1e34]
+        - paragraph [ref=f1e35]: CSS
+      - generic [ref=f1e36]:
+        - img "icono sass" [ref=f1e37]
+        - paragraph [ref=f1e38]: SASS
+      - generic [ref=f1e39]:
+        - img "icono node" [ref=f1e40]
+        - paragraph [ref=f1e41]: Node
+      - generic [ref=f1e42]:
+        - img "mongo" [ref=f1e43]
+        - paragraph [ref=f1e44]: MongoDB
+      - generic [ref=f1e45]:
+        - img "icono mysql" [ref=f1e46]
+        - paragraph [ref=f1e47]: MySQL
+      - generic [ref=f1e48]:
+        - img "icono mysql" [ref=f1e49]
+        - paragraph [ref=f1e50]: typeScript
+      - generic [ref=f1e51]:
+        - img "Angular" [ref=f1e52]
+        - paragraph [ref=f1e53]: Angular
+      - generic [ref=f1e54]:
+        - img "github" [ref=f1e55]
+        - paragraph [ref=f1e56]: Git Hub
+      - generic [ref=f1e57]:
+        - img "icono java" [ref=f1e58]
+        - paragraph [ref=f1e59]: Java
+      - generic [ref=f1e60]:
+        - img "icono opencode" [ref=f1e61]
+        - paragraph [ref=f1e62]: OpenCode
+      - generic [ref=f1e63]:
+        - img "icono csharp" [ref=f1e64]
+        - paragraph [ref=f1e65]: C#
+      - generic [ref=f1e66]:
+        - img "icono dotnet" [ref=f1e67]
+        - paragraph [ref=f1e68]: .NET
+  - generic [ref=f1e70]:
+    - heading "Mis Hobbies:" [level=2] [ref=f1e71]
+    - generic [ref=f1e72]:
+      - generic [ref=f1e73]:
+        - img "bicicleta" [ref=f1e74]
+        - heading "Ciclismo" [level=3] [ref=f1e75]
+        - paragraph [ref=f1e76]: Me encanta hacer rutas de trail y enduro por las montañas
+      - generic [ref=f1e77]:
+        - img "montaña" [ref=f1e78]
+        - heading "Senderismo" [level=3] [ref=f1e79]
+        - paragraph [ref=f1e80]: Caminar por senderos y acampar al aire libre
+  - generic [ref=f1e82]:
+    - heading "Experiencia:" [level=2] [ref=f1e83]
+    - generic [ref=f1e84]:
+      - heading "Nükrum Technologies" [level=3] [ref=f1e85]
+      - list [ref=f1e86]:
+        - listitem [ref=f1e87]: Creación del proyecto digital Nükrum basado en tratamientos médicos innovadores.
+        - listitem [ref=f1e88]: "Tecnologías: HTML, SASS, NodeJS, React, MySQL, Azure, Bitbucket, figma."
+    - generic [ref=f1e89]:
+      - heading "AIcrop" [level=3] [ref=f1e90]
+      - list [ref=f1e91]:
+        - listitem [ref=f1e92]: Creación del proyecto digital de AIcrop parael control automatizado de invernaderos.
+        - listitem [ref=f1e93]: Desarrollo y maquetación fronted Implementación de la lógica y peticiones del servidor.
+        - listitem [ref=f1e94]: Gestión y diseño de la base de datos.
+        - listitem [ref=f1e95]: "Tecnologías: HTML, SASS, NodeJS, React, MySQL, GitHub, figma, SCRUM"
+    - generic [ref=f1e96]:
+      - heading "Idiomas:" [level=2] [ref=f1e97]
+      - generic [ref=f1e98]:
+        - heading "Castellano:" [level=3] [ref=f1e99]
+        - paragraph [ref=f1e100]: Lengua materna
+      - generic [ref=f1e101]:
+        - heading "Alemán:" [level=3] [ref=f1e102]
+        - paragraph [ref=f1e103]: Nivel B2 ,experiencia laboral en el país de 7 años.
+      - generic [ref=f1e104]:
+        - heading "Inglés:" [level=3] [ref=f1e105]
+        - paragraph [ref=f1e106]: Nivel básico.
+    - heading "Formación:" [level=2] [ref=f1e107]
+    - generic [ref=f1e108]:
+      - heading "socraTech" [level=3] [ref=f1e109]
+      - list [ref=f1e110]:
+        - listitem [ref=f1e111]: "Maquetación web: HTML5, CSS3, Flexbox, Grid, diseño webresponsive, SASS, Bootstrap."
+        - listitem [ref=f1e112]: "Front-end: JavaScript ES6, TypeScript, React."
+        - listitem [ref=f1e113]: "Back-end: NodeJS, Express, Bases de datos: MySQL."
+        - listitem [ref=f1e114]: Manejo del sistema de control de versiones Git.
+        - listitem [ref=f1e115]: "Herramientas de desarrollo: VSCode, Terminal, Consola."
+        - listitem [ref=f1e116]: "Herramientas de trabajo en equipo y comunicación: GitHub,Teams, Discord, Slack."
+        - listitem [ref=f1e117]: Desarrollo de proyectos utilizando metodología Agile ySCRUM.
+  - generic [ref=f1e119]:
+    - button "Maquetación" [ref=f1e120]
+    - button "React" [ref=f1e121]
+    - button "JavaScript" [ref=f1e122]
+    - button "Node" [ref=f1e123]
+    - button "Todo" [ref=f1e124]
+  - generic [ref=f1e126]:
+    - generic [ref=f1e127]:
+      - article [ref=f1e214]:
+        - generic [ref=f1e215]:
+          - img "Mi Blog" [ref=f1e216]
+          - paragraph [ref=f1e217]: "#React"
+          - heading "Mi Blog" [level=2] [ref=f1e218]
+          - paragraph [ref=f1e219]: Blog personal con imágenes de mis viajes
+          - generic [ref=f1e220]:
+            - link "Web" [ref=f1e221] [cursor=pointer]:
+              - /url: https://my-cantabria-gallery.netlify.app/
+            - link "Código" [ref=f1e222] [cursor=pointer]:
+              - /url: https://github.com/gadetru/my-gallery
+      - article [ref=f1e223]:
+        - generic [ref=f1e224]:
+          - img "Check out" [ref=f1e225]
+          - paragraph [ref=f1e226]: "#React"
+          - heading "Check out" [level=2] [ref=f1e227]
+          - paragraph [ref=f1e228]: Ejemplo de carrito de compra para una tienda
+          - generic [ref=f1e229]:
+            - link "Web" [ref=f1e230] [cursor=pointer]:
+              - /url: https://beamish-starlight-4723bc.netlify.app/
+            - link "Código" [ref=f1e231] [cursor=pointer]:
+              - /url: https://github.com/gadetru/checkout-form
+    - generic [ref=f1e164]:
+      - button [ref=f1e165]:
+        - img "volver" [ref=f1e166]
+      - generic [ref=f1e167]: 2 / 3
+      - button [ref=f1e168]:
+        - img "siguiente" [ref=f1e169]
+  - contentinfo [ref=f1e171]:
+    - 'heading "Creado por: Gabriel Delgado Trujillo" [level=2] [ref=f1e172]'
+    - generic [ref=f1e173]:
+      - link [ref=f1e174] [cursor=pointer]:
+        - /url: https://www.linkedin.com/in/gadetru
+        - img "LinkedIn" [ref=f1e175]
+      - link [ref=f1e176] [cursor=pointer]:
+        - /url: https://github.com/gadetru
+        - img "GitHub" [ref=f1e177]
