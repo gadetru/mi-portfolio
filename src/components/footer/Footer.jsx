@@ -1,4 +1,3 @@
-import React from 'react'
 import './footer.scss'
 import gitCat from '../../img/gitcat.png'
 import linked from '../../img/linkedin.png'

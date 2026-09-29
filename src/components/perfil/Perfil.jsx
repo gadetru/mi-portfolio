@@ -1,6 +1,4 @@
-import React from 'react'
 import './perfil.scss'
-import perfil2 from'../../img/yomismo.webp'
 import perfil1 from'../../img/mi-perfil.webp'
 import telefono from'../../img/telefono-movil.svg'
 import correo from'../../img/correo-electronico.svg'
