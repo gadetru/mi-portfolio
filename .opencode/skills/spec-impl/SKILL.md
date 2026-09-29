@@ -22,8 +22,8 @@ Implementa el spec indicado paso a paso. Uso: `/spec-impl specs/<NNN>-<nombre>-s
 6. Prohibido `git worktree add`, `.worktrees/`, el parámetro `workdir` y `cd`. Todo el código ocurre en la raíz del proyecto, en la rama de trabajo creada. Los commits los haces tú a mano: el agente nunca ejecuta `git add` ni `git commit`.
 
 ### 2. Bucle por pasos (pausa por paso, commit manual)
-Lee `## 6. Plan de tareas` del spec y ejecuta en orden, un paso cada vez:
-1. Relee la sección de diseño del spec (`## 4`) y los gotchas de `AGENTS.md` antes de cada paso: `fetch("/project.json")` (no `../../`), `public/_redirects` único válido, `vite.config.js` mínimo, `index.html` (`gtag G-ZQXX3KJ4TC`, favicon `devchallenges.png`, entry `/src/main.jsx`), no reintroducir deuda (`@emotion/*`, `@fontsource/roboto`, `count` sin usar, nieve con URLs `http://`).
+Lee `## 7. Plan de tareas` del spec y ejecuta en orden, un paso cada vez:
+1. Relee la sección de diseño del spec (`## 6`) y los gotchas de `AGENTS.md` antes de cada paso: `fetch("/project.json")` (no `../../`), `public/_redirects` único válido, `vite.config.js` mínimo, `index.html` (`gtag G-ZQXX3KJ4TC`, favicon `devchallenges.png`, entry `/src/main.jsx`), no reintroducir deuda (`@emotion/*`, `@fontsource/roboto`, `count` sin usar, nieve con URLs `http://`).
 2. Si la tarea toca React, aplica la skill `react-docs` (verifica en `es.react.dev`, cita URL).
 3. Implementa SOLO esa tarea. No avances tareas futuras ni agrupes pasos.
 4. Verifica en la raíz del proyecto: `npm run lint` (cero warnings) + `npm run build` (`dist/` OK). Si no hay `node_modules`, avisa y sigue sin bloquear.
@@ -32,8 +32,8 @@ Lee `## 6. Plan de tareas` del spec y ejecuta en orden, un paso cada vez:
 7. Prohibido commitear: los commits los haces tú a mano. El agente nunca ejecuta `git add` ni `git commit`.
 
 ### 3. Checklist final (en el mismo spec, sin auto-marcar)
-1. Al terminar todos los pasos (o al parar), añade al final del MISMO fichero del spec la sección `## 9. Checklist verificación` si no existe.
-2. Un `- [ ]` por cada criterio de `## 5. Criterios de aceptación` + uno para `lint` y otro para `build`. Ejemplo:
+1. Al terminar todos los pasos (o al parar), añade al final del MISMO fichero del spec la sección final `Checklist verificación` si no existe (los specs creados con `/spec` ya la traen; solo créala si falta).
+2. Un `- [ ]` por cada criterio de la sección `Criterios de aceptación` + uno para `lint` y otro para `build`. Ejemplo:
    `- [ ] El filtro Todo muestra los 9 proyectos`
    `- [ ] lint cero warnings`
    `- [ ] build genera dist/`
