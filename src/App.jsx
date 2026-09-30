@@ -7,6 +7,7 @@ import { Proyectos } from './components/proyectos/Proyectos'
 import { Experiencia } from './components/experiencia/Experiencia'
 import { Filtrado } from './components/filtro/Filtrado'
 import { Footer } from './components/footer/Footer'
+import { Hojas } from './components/hojas/Hojas'
 
 
 
@@ -16,7 +17,7 @@ function App() {
   return (
     <>
 
-      
+      <Hojas />
       <div className='grid-container-1'>
         <div className='box1 grid-item'><Perfil/></div>
         <div className='box2'><Skills/></div>
