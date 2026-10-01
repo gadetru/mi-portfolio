@@ -87,11 +87,11 @@ No entra:
 - ¿Sorteo solo al montar o re-sorteo temporizado sin recarga?
 
 ## 11. Checklist verificación (última, checkboxes listos para /verifier)
-- [ ] CA1 En dev y preview se ven 2-3 hojas por delante (1-2 a <=720px) y resto detrás en bucle
-- [ ] CA2 Frontales con profundidad sutil, misma paleta/caída/giro que traseras
-- [ ] CA3 Repelencia igual delante/detrás; filtro, paginación, cards y enlaces clicables
-- [ ] CA4 Recargar cambia qué hojas van delante
-- [ ] CA5 Con prefers-reduced-motion no hay hojas ni animación
-- [ ] CA6 Grid box1-box7 sin regresión desktop y <=720px; filtro y paginación iguales
-- [ ] `npm run lint` → 0 errors, 0 warnings
-- [ ] `npm run build` genera `dist/` sin errores; `npm run preview` sirve doble capa
+- [x] CA1 En dev y preview se ven 2-3 hojas por delante (1-2 a <=720px) y resto detrás en bucle
+- [x] CA2 Frontales con profundidad sutil, misma paleta/caída/giro que traseras
+- [x] CA3 Repelencia igual delante/detrás; filtro, paginación, cards y enlaces clicables
+- [x] CA4 Recargar cambia qué hojas van delante
+- [x] CA5 Con prefers-reduced-motion no hay hojas ni animación
+- [x] CA6 Grid box1-box7 sin regresión desktop y <=720px; filtro y paginación iguales
+- [x] `npm run lint` → 0 errors, 0 warnings
+- [x] `npm run build` genera `dist/` sin errores; `npm run preview` sirve doble capa
