@@ -1,0 +1,101 @@
+@import '../../app.scss';
+
+// Capa fija de hojas otoñales: entre el fondo ($fondo-1) y el contenido.
+// pointer-events: none para no bloquear filtro, paginación ni enlaces.
+.hojas-capa {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  perspective: 600px;
+}
+
+// El grid de la app queda por encima de la capa sin alterar su layout.
+.grid-container-1 {
+  position: relative;
+  z-index: 1;
+}
+
+// Posición horizontal + repelencia al ratón (vía --mx/--my desde JS).
+// Sin animación propia: la caída y el giro viven en los hijos.
+.hoja {
+  position: absolute;
+  top: -6vh;
+  left: var(--x, 50%);
+  transform: translate3d(var(--mx, 0px), var(--my, 0px), 0);
+  transition: transform 0.3s ease-out;
+  will-change: transform;
+  pointer-events: none;
+}
+
+// Caída vertical en bucle + deriva lateral (sine visual con paradas).
+.hoja-caida {
+  animation-name: hoja-caida;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: var(--dur-caida, 12s);
+  animation-delay: var(--ret-caida, 0s);
+  will-change: transform;
+}
+
+// Figura de hoja CSS pura (sin assets) + rotación 3D continua.
+.hoja-figura {
+  width: var(--tam, 22px);
+  height: var(--tam, 22px);
+  background: var(--color, #d35400);
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 45%);
+  border-radius: 100% 4% 100% 4%;
+  box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.2);
+  opacity: var(--opacidad, 0.9);
+  transform-origin: center;
+  animation-name: hoja-giro;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: var(--dur-giro, 3.5s);
+  animation-delay: var(--ret-giro, 0s);
+  will-change: transform;
+}
+
+@keyframes hoja-caida {
+  0% {
+    transform: translate3d(0, -6vh, 0) rotateZ(0deg);
+  }
+
+  25% {
+    transform: translate3d(var(--deriva, 40px), 28vh, 0) rotateZ(90deg);
+  }
+
+  50% {
+    transform: translate3d(calc(var(--deriva, 40px) * -1), 58vh, 0) rotateZ(180deg);
+  }
+
+  75% {
+    transform: translate3d(var(--deriva, 40px), 86vh, 0) rotateZ(270deg);
+  }
+
+  100% {
+    transform: translate3d(0, 114vh, 0) rotateZ(360deg);
+  }
+}
+
+@keyframes hoja-giro {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(-20deg);
+  }
+
+  50% {
+    transform: rotateX(180deg) rotateY(180deg) rotateZ(20deg);
+  }
+
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(-20deg);
+  }
+}
+
+// RF4: respeto a prefers-reduced-motion (sin animación).
+@media (prefers-reduced-motion: reduce) {
+  .hojas-capa {
+    display: none;
+  }
+}
