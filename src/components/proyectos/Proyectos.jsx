@@ -116,20 +116,19 @@ export const Proyectos = ({ filtro = "" }) => {
           filteredProjects.slice(startIndex, endIndex).map((project) => {
             return (
               <article className="projectos-card" key={project.id}>
-                <div>
-
-                  <img alt={project.titulo} src={project.url_imagen} />
-                  <br />
-                  <p>#{project.tag}</p>
-                  <h2> {project.titulo}</h2>
-                  <p className="descripcion">{project.descripcion}</p>
-
+                <div className="card-contenido">
+                  <div className="card-media">
+                    <img alt={project.titulo} src={project.url_imagen} />
+                  </div>
+                  <div className="card-body">
+                    <p className="card-tag">#{project.tag}</p>
+                    <h2> {project.titulo}</h2>
+                    <p className="descripcion">{project.descripcion}</p>
+                  </div>
                   <div className="enlaces">
                     <a className="enlace-codigo" href={project.url_despliegue} target="_blank" rel="noreferrer noopener">Web</a>
                     <a className="enlace-codigo" href={project.url_github} target="_blank" rel="noreferrer noopener">Código</a>
-
                   </div>
-
                 </div>
               </article>);
           })
