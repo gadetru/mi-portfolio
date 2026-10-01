@@ -1,5 +1,5 @@
 # Integración bosque con cards oscuras translúcidas y velo sutil
-Estado: aprobado
+Estado: Implementado
 Depende de: specs/003-fondo-hojas-cayendo-spec.md (asume Hojas con z-index, pointer-events, repelencia y paleta otoñal; el velo y las cards se diseñan para convivir con esa capa sin taparla)
 Fecha de creación: 2026-10-01
 Descripción: Conservar la foto de bosque como fondo protagonista con un velo sutil y unificar todas las cards en un sistema oscuro translúcido inspirado en el bosque que elimine el blanco puro, el efecto recorte y las sombras para fondo claro. Solo SCSS, sin tocar layout, datos ni estado.
@@ -102,13 +102,13 @@ No entra:
 - ¿Mismo blur en móvil y desktop o valor más contenido en móvil por rendimiento?
 
 ## 11. Checklist verificación (última, checkboxes listos para /verifier)
-- [ ] CA1 En dev y preview se ve la foto de bosque con un velo sutil uniforme, sin zonas planas que la oculten
-- [ ] CA2 Ninguna card incluida muestra blanco puro: Perfil, Skills, Hobbies, Experiencia, Filtro y Proyectos comparten superficie oscura translúcida con blur y borde coherente
-- [ ] CA3 Las cards ya no parecen recortes pegados: bordes y blur las funden con la foto en desktop y en móvil
-- [ ] CA4 Textos, enlaces de contacto, botones de filtro con activa, botones Web y Código, y paginador se leen con contraste suficiente sobre oscuro
-- [ ] CA5 Las hojas otoñales siguen visibles con su comportamiento actual y filtro, paginación, cards y enlaces siguen clicables
-- [ ] CA6 Grid box1-box7 sin regresión en desktop y a 720px o menos con una sola columna apilada
-- [ ] CA7 Filtrado por tag y paginación 1/2/3/4 funcionan igual tras el cambio solo visual
-- [ ] CA8 Consola sin mixed-content ni 404 relacionados con fondo o estilos
-- [ ] npm run lint con cero errors y cero warnings
-- [ ] npm run build genera dist/ sin errores y preview sirve la app con bosque más cards oscuras
+- [x] CA1 En dev y preview se ve la foto de bosque con un velo sutil uniforme, sin zonas planas que la oculten
+- [x] CA2 Ninguna card incluida muestra blanco puro: Perfil, Skills, Hobbies, Experiencia, Filtro y Proyectos comparten superficie oscura translúcida con blur y borde coherente
+- [x] CA3 Las cards ya no parecen recortes pegados: bordes y blur las funden con la foto en desktop y en móvil
+- [x] CA4 Textos, enlaces de contacto, botones de filtro con activa, botones Web y Código, y paginador se leen con contraste suficiente sobre oscuro
+- [x] CA5 Las hojas otoñales siguen visibles con su comportamiento actual y filtro, paginación, cards y enlaces siguen clicables
+- [x] CA6 Grid box1-box7 sin regresión en desktop y a 720px o menos con una sola columna apilada
+- [x] CA7 Filtrado por tag y paginación 1/2/3/4 funcionan igual tras el cambio solo visual
+- [x] CA8 Consola sin mixed-content ni 404 relacionados con fondo o estilos
+- [x] npm run lint con cero errors y cero warnings
+- [x] npm run build genera dist/ sin errores y preview sirve la app con bosque más cards oscuras
