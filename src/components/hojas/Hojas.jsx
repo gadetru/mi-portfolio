@@ -38,7 +38,10 @@ export const Hojas = () => {
   const hojas = useMemo(crearHojas, [])
 
   // Sorteo frontal estable por montaje: 2-3 en desktop, 1-2 en móvil <=720px.
-  // Puro por montaje (deps []), cambia solo por recarga.
+  // Aleatorio con separación mínima en x: se re-sortea hasta que ninguna
+  // pareja de frontales quede a menos de 20 puntos, así cubren la pantalla
+  // de forma natural en cada carga (ni agrupadas en una esquina ni una fija
+  // por banda). Cambia por recarga.
   const idsFrente = useMemo(() => {
     const esMovil = typeof window !== 'undefined'
       && typeof window.matchMedia === 'function'
@@ -46,15 +49,35 @@ export const Hojas = () => {
     const cuantos = esMovil
       ? 1 + Math.floor(Math.random() * 2)
       : 2 + Math.floor(Math.random() * 2)
-    const indices = Array.from({ length: NUM_HOJAS }, (_, i) => i)
-    for (let i = indices.length - 1; i > 0; i -= 1) {
-      const j = Math.floor(Math.random() * (i + 1))
-      const aux = indices[i]
-      indices[i] = indices[j]
-      indices[j] = aux
+    const SEPARACION_MIN = 20
+    const INTENTOS = 60
+    const distanciaMinima = (indices) => {
+      const xs = indices.map((i) => hojas[i].x).sort((a, b) => a - b)
+      let min = Infinity
+      for (let k = 1; k < xs.length; k += 1) {
+        min = Math.min(min, xs[k] - xs[k - 1])
+      }
+      return min
     }
-    return new Set(indices.slice(0, cuantos).map((i) => `hoja-${i}`))
-  }, [])
+    const sortear = () => {
+      const elegidos = new Set()
+      while (elegidos.size < cuantos) {
+        elegidos.add(Math.floor(Math.random() * NUM_HOJAS))
+      }
+      return [...elegidos]
+    }
+    let mejor = sortear()
+    let mejorDist = distanciaMinima(mejor)
+    for (let t = 0; t < INTENTOS && mejorDist < SEPARACION_MIN; t += 1) {
+      const candidata = sortear()
+      const dist = distanciaMinima(candidata)
+      if (dist > mejorDist) {
+        mejor = candidata
+        mejorDist = dist
+      }
+    }
+    return new Set(mejor.map((i) => `hoja-${i}`))
+  }, [hojas])
 
   useEffect(() => {
     if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
