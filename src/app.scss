@@ -6,6 +6,20 @@ $Blue-1:#2F80ED;
 $fondo-1:#f2f2f2;
 $fondo-2:#c0c0c0;
 
+// Paleta bosque — spec 004: sistema oscuro translúcido sobre foto.
+// Reutiliza $Gray-* solo para jerarquía de texto; el azul $Blue-1 se
+// conserva sin borrar (los pasos 6-7 deciden si migra a ocre en botones/enlaces).
+// Acento ocre coherente con Hojas (COLORES_OTONO: #e67e22, #d35400, ...).
+$bosque-fondo-base:#121c14;
+$bosque-velo:rgba(13, 22, 15, 0.42);
+$bosque-superficie:rgba(18, 28, 20, 0.72);
+$bosque-superficie-solida:#1c2a20;
+$bosque-borde:rgba(255, 255, 255, 0.14);
+$bosque-texto:#f5f1e8;
+$bosque-texto-sec:#d8c9b0;
+$bosque-acento:#e67e22;
+$bosque-sombra:rgba(0, 0, 0, 0.45);
+
 
 @font-face {
     font-family: montserrat;
@@ -20,8 +34,8 @@ $fondo-2:#c0c0c0;
 body{
     margin: 0;
     padding: 40px;
-    background-color: $fondo-1;
-    background-image: url('/img/fondo-bosque.jpg');
+    background-color: $bosque-fondo-base;
+    background-image: linear-gradient($bosque-velo, $bosque-velo), url('/img/fondo-bosque.jpg');
     background-size: cover;
     background-position: center top;
     background-attachment: fixed;
