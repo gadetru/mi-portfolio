@@ -1,14 +1,19 @@
 @import '../../app.scss';
 .hobbies{
     border-radius: 24px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    background-color: $Gray-1;
+    border: 1px solid $bosque-borde;
+    box-shadow: 0 12px 32px $bosque-sombra, inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    background-color: $bosque-superficie-solida;
+    background-color: $bosque-superficie;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: $bosque-texto;
     height: 100%;
     h2{
         padding: 15px;
         font-family:montserrat;
         font-size: 24px;
-        color:$Gray-2;
+        color:$bosque-texto;
         margin: 0;
     }
     div{
@@ -27,14 +32,14 @@
             padding: 15px;
             font-family:montserrat;
             font-size: 18px;
-            color:$Gray-2;
+            color:$bosque-texto;
             margin: 0;
         }
         p{
             padding: 0px 15px 15px 15px;
             font-family:montserrat;
             font-size: 14px;
-            color:$Gray-3;
+            color:$bosque-texto-sec;
             margin: 0;
         }
     }

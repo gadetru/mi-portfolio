@@ -7,6 +7,7 @@
     width: 100%;
     border-radius: 24px;
     padding: 20px 0px 20px 0px;
+    color: $bosque-texto;
 
     box-sizing: border-box;
    
@@ -18,13 +19,13 @@
 
 /* Estilo del riel de la barra de desplazamiento */
 .descripcion::-webkit-scrollbar-track {
-    background-color: $Blue-1; /* Color del riel */
+    background-color: $bosque-superficie-solida; /* Color del riel */
     border-radius: 0 12px 12px 0;
 }
 
 /* Estilo del pulgar (la parte móvil) de la barra de desplazamiento */
 .descripcion::-webkit-scrollbar-thumb {
-    background-color: #808080; /* Color del pulgar */
+    background-color: $bosque-texto-sec; /* Color del pulgar */
     border-radius: 5px; /* Bordes redondeados del pulgar */
     border-radius: 0 12px 12px 0;
 
@@ -32,7 +33,7 @@
 
 /* Estilo del pulgar cuando se está moviendo */
 .descripcion:-webkit-scrollbar-thumb:hover {
-    background-color: #423f3f;
+    background-color: $bosque-acento;
     border-radius: 0 12px 12px 0;
 }
 .projectos-card{
@@ -44,11 +45,16 @@
     height: 550px;
     box-sizing: border-box;
     border-radius: 12px;
-    background-color:$Gray-1;
+    border: 1px solid $bosque-borde;
+    background-color: $bosque-superficie-solida;
+    background-color: $bosque-superficie;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: $bosque-texto;
     justify-content: flex-start;
     align-items: flex-start;
     padding: 10px 20px 10px 20px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    box-shadow: 0 12px 32px $bosque-sombra, inset 0 1px 0 rgba(255, 255, 255, 0.06);
     box-sizing: border-box;
  
     transition: transform 0.3s; /* Agrega una transición para suavizar el cambio */
@@ -63,16 +69,17 @@
         border-radius: 12px;
         padding: 5px 5px 5px 5px;
         box-sizing: border-box;
-        box-shadow: rgba(0, 0, 0, 0.46) 0px 1px 4px;
+        box-shadow: 0 8px 20px $bosque-sombra;
     }
     p{
         height: 15px;
+        color: $bosque-acento;
     }
 
     h2{
 
         height: 36px;
-        color: $Gray-4;
+        color: $bosque-texto;
         font-family: montserrat;
         font-size: 22px;
     }
@@ -82,7 +89,7 @@
         overflow-x: hidden;
         height: 120px;
        margin-top: 0;
-       color: $Gray-3;
+       color: $bosque-texto-sec;
        font-family: montserrat;
     }
 
@@ -108,14 +115,14 @@
         // }
         .enlace-codigo{
             text-decoration: none;
-            color: $Blue-1;
+            color: $bosque-acento;
             font-family: montserrat;
             font-size: 14px;
             width: 100px;
             height: 40px;
             border-radius: 12px;
-            border: 1px solid $Blue-1;
-            background-color: $Gray-1;
+            border: 1px solid $bosque-acento;
+            background-color: rgba(230, 126, 34, 0.12);
             text-align: center;
             line-height: 40px;
             
@@ -123,13 +130,13 @@
         }
         .enlace-codigo:hover{
            
-            color: $Gray-1;
-            background-color: $Blue-1;
+            color: $bosque-superficie-solida;
+            background-color: $bosque-acento;
             transform: scale(1.1); /* Por ejemplo, aumenta el tamaño al hacer 
             hover */
             font-weight: bolder;
-             border: 1px solid $Gray-3;
-            box-shadow: $Blue-1 0px 3px 8px;
+             border: 1px solid $bosque-acento;
+            box-shadow: $bosque-acento 0px 3px 8px;
 
         }
     }
@@ -140,7 +147,7 @@
 .projectos-card:hover{
     transform: scale(1.1); /* Por ejemplo, aumenta el tamaño al hacer 
     hover */
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: 0 16px 40px $bosque-sombra, inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 
@@ -159,22 +166,29 @@
         box-sizing: border-box;
         transition: transform 0.1s;
         padding-top: 5px;
+        border: 1px solid $bosque-borde;
+        background-color: $bosque-superficie-solida;
+        background-color: $bosque-superficie;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         
        img{
         width: 24px;
         height: 24px;
+        filter: brightness(0) invert(1);
         }    
     }
     button:hover{
         transform: scale(1.3);
         border-radius: 50%;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+        border-color: $bosque-acento;
+        box-shadow: 0 8px 20px $bosque-sombra;
     }
     span{
         font-family: montserrat;
         font-weight: bolder;
         font-size: 24px;
-        color: $Gray-4;
+        color: $bosque-texto;
     }
 
 }
@@ -225,11 +239,16 @@
             height: 100%;
             box-sizing: border-box;
             border-radius: 12px;
-            background-color:$Gray-1;
+            border: 1px solid $bosque-borde;
+            background-color: $bosque-superficie-solida;
+            background-color: $bosque-superficie;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: $bosque-texto;
             justify-content: flex-start;
             align-items: flex-start;
             padding: 10px 20px 10px 20px;
-            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            box-shadow: 0 12px 32px $bosque-sombra, inset 0 1px 0 rgba(255, 255, 255, 0.06);
             box-sizing: border-box;
 
             transition: transform 0.3s; /* Agrega una transición para suavizar el cambio */
