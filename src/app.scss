@@ -9,7 +9,7 @@ $fondo-2:#c0c0c0;
 
 @font-face {
     font-family: montserrat;
-    src: url('../src/fonts/Montserrat-VariableFont_wght.ttf');
+    src: url('/fonts/Montserrat-VariableFont_wght.ttf');
 }
 // @font-face {
 //     font-family: montserrat-italic;
@@ -21,6 +21,11 @@ body{
     margin: 0;
     padding: 40px;
     background-color: $fondo-1;
+    background-image: url('/img/fondo-bosque.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     width: 100%;
     box-sizing: border-box;
 }

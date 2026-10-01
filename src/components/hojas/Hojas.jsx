@@ -53,10 +53,14 @@ export const Hojas = () => {
 
     const aplicarRepelencia = () => {
       pendiente = false
-      const nodos = capa.children
-      for (let i = 0; i < nodos.length; i += 1) {
-        const nodo = nodos[i]
-        const rect = nodo.getBoundingClientRect()
+      const figuras = capa.querySelectorAll('.hoja-figura')
+      for (let i = 0; i < figuras.length; i += 1) {
+        const figura = figuras[i]
+        const hoja = figura.closest('.hoja')
+        if (!hoja) {
+          continue
+        }
+        const rect = figura.getBoundingClientRect()
         const cx = rect.left + rect.width / 2
         const cy = rect.top + rect.height / 2
         const dx = cx - mouseX
@@ -65,11 +69,11 @@ export const Hojas = () => {
         if (dist > 0 && dist < RADIO_REPELENCIA) {
           const fuerza = (1 - dist / RADIO_REPELENCIA) * FUERZA_MAX
           const norma = fuerza / dist
-          nodo.style.setProperty('--mx', `${(dx * norma).toFixed(1)}px`)
-          nodo.style.setProperty('--my', `${(dy * norma).toFixed(1)}px`)
+          hoja.style.setProperty('--mx', `${(dx * norma).toFixed(1)}px`)
+          hoja.style.setProperty('--my', `${(dy * norma).toFixed(1)}px`)
         } else {
-          nodo.style.setProperty('--mx', '0px')
-          nodo.style.setProperty('--my', '0px')
+          hoja.style.setProperty('--mx', '0px')
+          hoja.style.setProperty('--my', '0px')
         }
       }
     }

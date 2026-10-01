@@ -16,7 +16,7 @@ No hay suite de tests ni typecheck. Verificación = `lint` + `build`.
 - Entrada: `src/main.jsx` → `src/App.jsx`. `App.jsx` solo levanta estado `filtro` y compone grid `box1-box7` (`src/app.scss`): Perfil full-width, Skills/Hobbies/Experiencia, Filtro, Proyectos, Footer.
 - Flujo: `Filtrado onFilterChange={setFiltro}` → `Proyectos filtro={filtro}` con `project.tag.includes(filtro)` (case-sensitive: `maquetado, React, JS, node`).
 - Datos: `Proyectos.jsx` hace `fetch("../../project.json")` y pagina (`itemsPerPage` 1/2/3/4 según `<=480/800/1200`). Fuente: `public/project.json` (9 items) + imágenes en `public/img/`.
-- Estilos: un `.scss` por componente + variables/grid en `src/app.scss` (requiere `sass`). Fuente Montserrat local en `src/fonts/`.
+- Estilos: un `.scss` por componente + variables/grid en `src/app.scss` (requiere `sass`). Fuente Montserrat en `public/fonts/` (ruta absoluta `/fonts/...`, resoluble en dev y build).
 
 ## Flujo de trabajo Git
 

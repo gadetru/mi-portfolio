@@ -1,5 +1,5 @@
 # Fondo dinámico de hojas otoñales 3D con colisión
-Estado: aprobado
+Estado: implementado
 Depende de: specs/002-fix-errores-heredados-limpieza-spec.md (parte del fondo plano limpio que dejó 002; reintroduce fondo animado sobre esa base)
 Fecha de creación: 2026-09-29
 Descripción: fondo dinámico de 12–15 hojas otoñales con caída y rotación 3D sobre toda la página, con repelencia al paso del ratón y respeto a `prefers-reduced-motion`. Sin jQuery, sin URLs externas, sin estado nuevo en `App.jsx`.
@@ -78,11 +78,11 @@ No entra:
 - ¿Reducir densidad a `<=720px` si hay jank, o mantener 12–15 fijas?
 
 ## 11. Checklist verificación (última, checkboxes listos para /verifier)
-- [ ] En dev y preview se ven 12–15 hojas otoñales cayendo en bucle sobre toda la página
-- [ ] Las hojas rotan en 3D (flip) mientras caen, con trayectorias no idénticas
-- [ ] Al mover el ratón las hojas cercanas se repelen; filtro, paginación, cards y enlaces siguen clicables
-- [ ] Con `prefers-reduced-motion` no hay animación
-- [ ] Grid `box1-box7` sin regresión en desktop y `<=720px`
-- [ ] Consola sin mixed-content ni 404; sin jQuery ni peticiones externas
-- [ ] `npm run lint` → 0 errors, 0 warnings
-- [ ] `npm run build` genera `dist/` sin errores; `npm run preview` sirve la app
+- [x] En dev y preview se ven 12–15 hojas otoñales cayendo en bucle sobre toda la página
+- [x] Las hojas rotan en 3D (flip) mientras caen, con trayectorias no idénticas
+- [x] Al mover el ratón las hojas cercanas se repelen; filtro, paginación, cards y enlaces siguen clicables
+- [x] Con `prefers-reduced-motion` no hay animación
+- [x] Grid `box1-box7` sin regresión en desktop y `<=720px`
+- [x] Consola sin mixed-content ni 404; sin jQuery ni peticiones externas
+- [x] `npm run lint` → 0 errors, 0 warnings
+- [x] `npm run build` genera `dist/` sin errores; `npm run preview` sirve la app
