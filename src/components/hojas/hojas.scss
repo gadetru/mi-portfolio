@@ -2,13 +2,27 @@
 
 // Capa fija de hojas otoñales: entre el fondo ($fondo-1) y el contenido.
 // pointer-events: none para no bloquear filtro, paginación ni enlaces.
-.hojas-capa {
+// Doble capa spec-005: atrás (z:0) + frente (z:2, por encima del grid z:1),
+// ambas reutilizan posición, perspective y keyframes.
+.hojas-capa,
+.hojas-capa-atras,
+.hojas-capa-frente {
   position: fixed;
   inset: 0;
-  z-index: 0;
   overflow: hidden;
   pointer-events: none;
   perspective: 600px;
+}
+
+.hojas-capa,
+.hojas-capa-atras {
+  z-index: 0;
+}
+
+// Frontal por encima de .grid-container-1 (z:1) con profundidad sutil:
+// mismo color/animación, tamaño y opacidad vienen por --tam/--opacidad.
+.hojas-capa-frente {
+  z-index: 2;
 }
 
 // El grid de la app queda por encima de la capa sin alterar su layout.
@@ -95,7 +109,9 @@
 
 // RF4: respeto a prefers-reduced-motion (sin animación).
 @media (prefers-reduced-motion: reduce) {
-  .hojas-capa {
+  .hojas-capa,
+  .hojas-capa-atras,
+  .hojas-capa-frente {
     display: none;
   }
 }
