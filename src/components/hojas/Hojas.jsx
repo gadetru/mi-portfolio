@@ -33,16 +33,40 @@ const crearHojas = () =>
   }))
 
 export const Hojas = () => {
-  const capaRef = useRef(null)
+  const capaAtrasRef = useRef(null)
+  const capaFrenteRef = useRef(null)
   const hojas = useMemo(crearHojas, [])
 
+  // Sorteo frontal estable por montaje: 2-3 en desktop, 1-2 en móvil <=720px.
+  // Puro por montaje (deps []), cambia solo por recarga.
+  const idsFrente = useMemo(() => {
+    const esMovil = typeof window !== 'undefined'
+      && typeof window.matchMedia === 'function'
+      && window.matchMedia('(max-width: 720px)').matches
+    const cuantos = esMovil
+      ? 1 + Math.floor(Math.random() * 2)
+      : 2 + Math.floor(Math.random() * 2)
+    const indices = Array.from({ length: NUM_HOJAS }, (_, i) => i)
+    for (let i = indices.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1))
+      const aux = indices[i]
+      indices[i] = indices[j]
+      indices[j] = aux
+    }
+    return new Set(indices.slice(0, cuantos).map((i) => `hoja-${i}`))
+  }, [])
+
   useEffect(() => {
+    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
+      return undefined
+    }
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       return undefined
     }
 
-    const capa = capaRef.current
-    if (!capa) {
+    const capaAtras = capaAtrasRef.current
+    const capaFrente = capaFrenteRef.current
+    if (!capaAtras && !capaFrente) {
       return undefined
     }
 
@@ -53,27 +77,30 @@ export const Hojas = () => {
 
     const aplicarRepelencia = () => {
       pendiente = false
-      const figuras = capa.querySelectorAll('.hoja-figura')
-      for (let i = 0; i < figuras.length; i += 1) {
-        const figura = figuras[i]
-        const hoja = figura.closest('.hoja')
-        if (!hoja) {
-          continue
-        }
-        const rect = figura.getBoundingClientRect()
-        const cx = rect.left + rect.width / 2
-        const cy = rect.top + rect.height / 2
-        const dx = cx - mouseX
-        const dy = cy - mouseY
-        const dist = Math.hypot(dx, dy)
-        if (dist > 0 && dist < RADIO_REPELENCIA) {
-          const fuerza = (1 - dist / RADIO_REPELENCIA) * FUERZA_MAX
-          const norma = fuerza / dist
-          hoja.style.setProperty('--mx', `${(dx * norma).toFixed(1)}px`)
-          hoja.style.setProperty('--my', `${(dy * norma).toFixed(1)}px`)
-        } else {
-          hoja.style.setProperty('--mx', '0px')
-          hoja.style.setProperty('--my', '0px')
+      const capas = [capaAtras, capaFrente].filter(Boolean)
+      for (let c = 0; c < capas.length; c += 1) {
+        const figuras = capas[c].querySelectorAll('.hoja-figura')
+        for (let i = 0; i < figuras.length; i += 1) {
+          const figura = figuras[i]
+          const hoja = figura.closest('.hoja')
+          if (!hoja) {
+            continue
+          }
+          const rect = figura.getBoundingClientRect()
+          const cx = rect.left + rect.width / 2
+          const cy = rect.top + rect.height / 2
+          const dx = cx - mouseX
+          const dy = cy - mouseY
+          const dist = Math.hypot(dx, dy)
+          if (dist > 0 && dist < RADIO_REPELENCIA) {
+            const fuerza = (1 - dist / RADIO_REPELENCIA) * FUERZA_MAX
+            const norma = fuerza / dist
+            hoja.style.setProperty('--mx', `${(dx * norma).toFixed(1)}px`)
+            hoja.style.setProperty('--my', `${(dy * norma).toFixed(1)}px`)
+          } else {
+            hoja.style.setProperty('--mx', '0px')
+            hoja.style.setProperty('--my', '0px')
+          }
         }
       }
     }
@@ -94,39 +121,53 @@ export const Hojas = () => {
     }
   }, [])
 
-  return (
-    <div className='hojas-capa' ref={capaRef} aria-hidden='true'>
-      {hojas.map((hoja) => (
+  const hojasAtras = hojas.filter((hoja) => !idsFrente.has(hoja.id))
+  const hojasFrente = hojas.filter((hoja) => idsFrente.has(hoja.id))
+
+  const pintarHoja = (hoja, esFrontal) => {
+    const tam = esFrontal ? hoja.tam * 1.18 : hoja.tam
+    const opacidad = esFrontal ? Math.min(1, Math.max(0.9, hoja.opacidad)) : hoja.opacidad
+    return (
+      <div
+        key={hoja.id}
+        className='hoja'
+        style={{
+          '--x': `${hoja.x}%`,
+          '--mx': '0px',
+          '--my': '0px'
+        }}
+      >
         <div
-          key={hoja.id}
-          className='hoja'
+          className='hoja-caida'
           style={{
-            '--x': `${hoja.x}%`,
-            '--mx': '0px',
-            '--my': '0px'
+            '--dur-caida': `${hoja.durCaida}s`,
+            '--ret-caida': `${hoja.retCaida}s`,
+            '--deriva': `${hoja.deriva}px`
           }}
         >
           <div
-            className='hoja-caida'
+            className='hoja-figura'
             style={{
-              '--dur-caida': `${hoja.durCaida}s`,
-              '--ret-caida': `${hoja.retCaida}s`,
-              '--deriva': `${hoja.deriva}px`
+              '--tam': `${tam}px`,
+              '--color': hoja.color,
+              '--dur-giro': `${hoja.durGiro}s`,
+              '--ret-giro': `${hoja.retGiro}s`,
+              '--opacidad': opacidad
             }}
-          >
-            <div
-              className='hoja-figura'
-              style={{
-                '--tam': `${hoja.tam}px`,
-                '--color': hoja.color,
-                '--dur-giro': `${hoja.durGiro}s`,
-                '--ret-giro': `${hoja.retGiro}s`,
-                '--opacidad': hoja.opacidad
-              }}
-            />
-          </div>
+          />
         </div>
-      ))}
-    </div>
+      </div>
+    )
+  }
+
+  return (
+    <>
+      <div className='hojas-capa-atras' ref={capaAtrasRef} aria-hidden='true'>
+        {hojasAtras.map((hoja) => pintarHoja(hoja, false))}
+      </div>
+      <div className='hojas-capa-frente' ref={capaFrenteRef} aria-hidden='true'>
+        {hojasFrente.map((hoja) => pintarHoja(hoja, true))}
+      </div>
+    </>
   )
 }
