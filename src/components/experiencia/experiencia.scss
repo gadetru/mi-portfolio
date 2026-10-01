@@ -7,14 +7,19 @@
     display: flex;
     flex-direction: column;
     border-radius: 24px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border: 1px solid $bosque-borde;
+    box-shadow: 0 12px 32px $bosque-sombra, inset 0 1px 0 rgba(255, 255, 255, 0.06);
     padding: 10px 20px 10px 20px;
     box-sizing: border-box;
-    background-color: $Gray-1;
+    background-color: $bosque-superficie-solida;
+    background-color: $bosque-superficie;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: $bosque-texto;
     font-family: montserrat;
     h2{
         font-size: 24px;
-        color: $Gray-2;
+        color: $bosque-texto;
     }
     .mi-formacion{
         display: flex;
@@ -23,13 +28,13 @@
         h3{
             width: 20%;
             font-size: 18px;
-            color: $Gray-2;
+            color: $bosque-texto;
             margin-right: 10px;
 
         }
         ul{
             width: 80%;
-            color: $Gray-3;
+            color: $bosque-texto-sec;
             font-size: 18px;
             li{
                 margin-bottom: 10px;
@@ -46,13 +51,13 @@
         h3{
             width: 20%;
             font-size: 18px;
-            color: $Gray-2;
+            color: $bosque-texto;
             margin-right: 10px;
 
         }
         ul{
             width: 80%;
-            color: $Gray-3;
+            color: $bosque-texto-sec;
             font-size: 18px;
             li{
                 display: block;
@@ -72,11 +77,11 @@
             h3{
                 width: 20%;
                 font-size: 18px;
-                color: $Gray-2;
+                color: $bosque-texto;
             }
             p{
                 width: 80%;
-                color: $Gray-3;
+                color: $bosque-texto-sec;
                 font-size: 18px;
             }
             
@@ -141,7 +146,7 @@
 
         h2{
             font-size: 18px;
-            color: $Gray-2;
+            color: $bosque-texto;
             margin: 15px 0px 10px 0px;
         }
         .mi-formacion{
