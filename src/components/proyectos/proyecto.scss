@@ -2,7 +2,9 @@
 .projectos-ppal{
     z-index: -1000;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: stretch;
     gap: 15px;
     width: 100%;
     border-radius: 24px;
@@ -41,8 +43,11 @@
     text-decoration:  none;
     display: flex;
     flex-direction: column;
-    width: 25%;
-    height: 550px;
+    flex: 1 1 calc(25% - 12px);
+    max-width: calc(25% - 12px);
+    min-width: 0;
+    height: auto;
+    min-height: 560px;
     box-sizing: border-box;
     border-radius: 12px;
     border: 1px solid $bosque-borde;
@@ -53,14 +58,18 @@
     color: $bosque-texto;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 20px 16px 20px;
     box-shadow: 0 12px 32px $bosque-sombra, inset 0 1px 0 rgba(255, 255, 255, 0.06);
     box-sizing: border-box;
  
     transition: transform 0.3s; /* Agrega una transición para suavizar el cambio */
-   div{
+   .card-contenido{
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    .card-media{
+        width: 100%;
     img{
         
         width: 100%;
@@ -71,14 +80,23 @@
         box-sizing: border-box;
         box-shadow: 0 8px 20px $bosque-sombra;
     }
-    p{
+    }
+    .card-body{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+    p.card-tag{
         height: 15px;
         color: $bosque-acento;
     }
 
     h2{
 
-        height: 36px;
+        height: auto;
+        min-height: 44px;
+        line-height: 1.2;
+        margin: 6px 0;
         color: $bosque-texto;
         font-family: montserrat;
         font-size: 22px;
@@ -92,13 +110,20 @@
        color: $bosque-texto-sec;
        font-family: montserrat;
     }
+    }
 
     .enlaces{
-        height: 50px;
+        height: auto;
+        min-height: 50px;
         width: 100%;
         display: flex;
+        flex-wrap: wrap;
         gap: 10px;
         justify-content: flex-start;
+        align-items: center;
+        align-content: flex-start;
+        margin-top: auto;
+        padding-top: 12px;
         // .enlace-despliegue{
         //     text-decoration: none;
         //     color: $Gray-1;
@@ -118,13 +143,16 @@
             color: $bosque-acento;
             font-family: montserrat;
             font-size: 14px;
-            width: 100px;
+            flex: 1 1 100px;
+            max-width: 120px;
+            min-width: 0;
             height: 40px;
             border-radius: 12px;
             border: 1px solid $bosque-acento;
             background-color: rgba(230, 126, 34, 0.12);
             text-align: center;
             line-height: 40px;
+            box-sizing: border-box;
             
             transition: transform 0.2s; /* Agrega una transición para suavizar el cambio */
         }
@@ -148,6 +176,15 @@
     transform: scale(1.1); /* Por ejemplo, aumenta el tamaño al hacer 
     hover */
     box-shadow: 0 16px 40px $bosque-sombra, inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+@media (hover: none){
+    .projectos-card:hover{
+        transform: none;
+    }
+    .projectos-card .card-contenido .enlaces .enlace-codigo:hover{
+        transform: none;
+    }
 }
 
 
@@ -195,12 +232,27 @@
 
 
 //RESPONSIVE CAMBIANDO ANCHO DE CARDS Y FONT
+// Breakpoints alineados con itemsPerPage de Proyectos.jsx (480/800/1200)
+// Anchos con calc() para descontar el gap de 15px y evitar desborde
 @media screen and (min-width: 800px) and (max-width: 1200px){
 
 .projectos-card{
-    width: 33%;
-    overflow: auto;
-    overflow-x: hidden;
+    flex: 1 1 calc(33.333% - 10px);
+    max-width: calc(33.333% - 10px);
+    min-width: 0;
+    height: auto;
+    min-height: 560px;
+
+    .card-contenido .enlaces{
+        justify-content: center;
+    }
+
+    .card-contenido .enlaces .enlace-codigo{
+        flex: 1 1 75px;
+        max-width: 120px;
+        min-width: 0;
+        font-size: 13px;
+    }
 }
 
 }
@@ -208,24 +260,41 @@
 @media screen and (min-width: 480px) and (max-width: 800px){
 
     .projectos-card{
-        width: 50%;
-        
+        flex: 1 1 calc(50% - 8px);
+        max-width: 400px;
+        min-width: 0;
+        height: auto;
+        min-height: 520px;
     
         h2{
             font-size: 18px;
+            min-height: 40px;
         }
     
         p{
             font-size: 14px;
         }
-    }
 
-    .enlaces{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-       
+        .card-contenido{
+            height: 100%;
+        }
+
+        .card-contenido .enlaces{
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            align-content: flex-start;
+            gap: 10px;
+            width: 100%;
+            height: auto;
+        }
+
+        .card-contenido .enlaces .enlace-codigo{
+            flex: 1 1 110px;
+            max-width: 140px;
+            min-width: 0;
+        }
     }
 }
 
@@ -235,8 +304,12 @@
             text-decoration:  none;
             display: flex;
             flex-direction: column;
-            width: 95%;
-            height: 100%;
+            flex: 1 1 100%;
+            width: 100%;
+            max-width: 360px;
+            margin: 0 auto;
+            height: auto;
+            min-height: 0;
             box-sizing: border-box;
             border-radius: 12px;
             border: 1px solid $bosque-borde;
@@ -247,7 +320,7 @@
             color: $bosque-texto;
             justify-content: flex-start;
             align-items: flex-start;
-            padding: 10px 20px 10px 20px;
+            padding: 10px 20px 16px 20px;
             box-shadow: 0 12px 32px $bosque-sombra, inset 0 1px 0 rgba(255, 255, 255, 0.06);
             box-sizing: border-box;
 
@@ -255,11 +328,19 @@
     
         h2{
             font-size: 16px;
+            height: auto;
+            min-height: 24px;
         }
     
         p{
             font-size: 14px;
 
+        }
+        .card-contenido{
+            height: auto;
+        }
+        .card-body{
+            flex: 1 1 auto;
         }
         .descripcion{
             height: 80px;
@@ -267,13 +348,27 @@
         }
 
         
-    .enlaces{
+    .card-contenido .enlaces{
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 10px;
-       
+        height: auto;
+        width: 100%;
+        max-width: 220px;
+        margin: 0 auto;
+        padding-top: 14px;
+        .enlace-codigo{
+            width: 100%;
+            max-width: 220px;
+            flex: none;
+            height: 40px;
+        }
     }
+    }
+
+    .projectos-card:hover{
+        transform: none;
     }
 
 }
