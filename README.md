@@ -36,27 +36,31 @@ mi-portfolio/
 ├── public/
 │   ├── _redirects          # /* /index.html 200 (Netlify SPA) -> único válido
 │   ├── project.json        # 9 proyectos (fuente de datos)
+│   ├── fonts/              # Montserrat-VariableFont_wght.ttf (@font-face, ruta /fonts/...)
 │   └── img/                # recipe.webp, portfolio.webp/png, node-form.png, my-team1.webp,
 │                           # my-blog.webp, mi-portfolio.webp, espantapajaro.webp, edie.webp,
-│                           # consultant.webp, check-out.webp
+│                           # consultant.webp, check-out.webp, fondo-bosque.jpg (fondo body)
 └── src/
     ├── main.jsx            # ReactDOM.createRoot -> <App/> en StrictMode
     ├── App.jsx             # único estado global `filtro`, grid box1-box7
-    ├── app.scss            # variables, Montserrat, efecto nieve, grid 2 cols
+    ├── app.scss            # variables $bosque-*, Montserrat, grid 2 cols
     ├── _redirects          # duplicado, NO se publica (solo vale public/_redirects)
-    ├── fonts/              # Montserrat-VariableFont_wght.ttf (usada), Regular, Italic-Variable
-    ├── img/ (26)           # mi-perfil.webp (usada), yomismo.webp, perfil1.jpg, bolso.jpg, bici.jpg,
-    │                       # bici2.png + montaña.jpg (hobbies), react/javascript/html/css/sass/node/
-    │                       # mongoIcon/mysql/typeScript/angularIcon/gitIcon.png (skills),
-    │                       # correo-electronico.svg/png, telefono-movil.svg/png,
+    ├── img/ (37)           # mi-perfil.webp (perfil), yomismo.webp, perfil1.jpg, bolso.jpg,
+    │                       # bici.jpg, bici2.png + montaña.jpg (hobbies),
+    │                       # react/javascript/html/css/sass/node/mongoIcon/mysql/typeScript/
+    │                       # angularIcon/gitIcon/opencode (base spec 001) +
+    │                       # java/csharp/dotnet/intellij/visualstudio/vscode/androidstudio/
+    │                       # sqlserver/xml/xaml (spec 006),
+    │                       # correo-electronico.svg/png, telefono-movil.svg/png (perfil),
     │                       # flecha-izquierda/correcta.png, gitcat.png, linkedin.png
     └── components/
         ├── perfil/Perfil.jsx + perfil.scss
-        ├── habilidades/Skills.jsx + skills.scss
-        ├── entretenimiento/Hobbies.jsx + hobbies.scss
+        ├── habilidades/Skills.jsx + skills.scss   # 5 categorías + toggle colapsable
+        ├── entretenimiento/Hobbies.jsx + hobbies.scss  # compacto (img 140px)
         ├── experiencia/Experiencia.jsx + experiencia.scss
         ├── filtro/Filtrado.jsx + filtrado.scss
         ├── proyectos/Proyectos.jsx + proyecto.scss
+        ├── hojas/Hojas.jsx + hojas.scss          # hojas otoñales (sustituye nieve)
         └── footer/Footer.jsx + footer.scss
 ```
 
@@ -67,12 +71,13 @@ Layout en `src/app.scss`: `grid-template-columns: 1fr 2fr`:
 
 | Componente | Ruta | Qué renderiza | Props / Estado |
 |---|---|---|---|
-| `Perfil` | `src/components/perfil/Perfil.jsx` | Foto `mi-perfil.webp`, nombre + `Full Stack developer`, `mailto:gadetru@gmail.com`, `tel:+34644172604`, bio | Sin props |
-| `Skills` | `src/components/habilidades/Skills.jsx` | `Tecnologías:` 11 items: React, JavaScript, HTML, CSS, SASS, Node, MongoDB, MySQL, TypeScript, Angular, GitHub | Sin props, PNG de `../../img/` |
-| `Hobbies` | `src/components/entretenimiento/Hobbies.jsx` | `Mis Hobbies:` 2 cards: `bici2.png` Ciclismo trail/enduro, `montaña.jpg` Senderismo/acampar | Sin props |
+| `Perfil` | `src/components/perfil/Perfil.jsx` | Foto `mi-perfil.webp` (fluida, contenida en card a 360–390px), nombre + `Full Stack developer`, `mailto:gadetru@gmail.com`, `tel:+34644172604` (iconos 28px), bio | Sin props |
+| `Skills` | `src/components/habilidades/Skills.jsx` | `Tecnologías:` 22 items en 5 categorías (Lenguajes, Marcas, Frameworks, Bases de datos, IDEs/entornos) + toggle colapsable (`button[aria-expanded]`; nace expandido en desktop, colapsado en `<=720px`) | Estado local `abierta`, PNG de `../../img/` |
+| `Hobbies` | `src/components/entretenimiento/Hobbies.jsx` | `Mis Hobbies:` 2 cards compactas (img 140px): `bici2.png` Ciclismo trail/enduro, `montaña.jpg` Senderismo/acampar | Sin props |
 | `Experiencia` | `src/components/experiencia/Experiencia.jsx` | `Experiencia:` Nükrum Technologies (médico: HTML/SASS/Node/React/MySQL/Azure/Bitbucket/Figma), AIcrop (invernaderos + SCRUM/GitHub), idiomas (ES materna, DE B2, EN básico), `Formación:` socraTech | Contenido hardcodeado |
 | `Filtrado` | `src/components/filtro/Filtrado.jsx` | 5 botones: Maquetación (`maquetado`), React (`React`), JavaScript (`JS`), Node (`node`), Todo (`""`) | `onFilterChange(fn)`, estado local `filtro`, clase `activa` |
 | `Proyectos` | `src/components/proyectos/Proyectos.jsx` | Grid cards + paginador `‹ actual/total ›`. Card = link a `url_despliegue` con img, `#tag`, título, descripción, botón `Código` a GitHub | `filtro:string`, `projects[]`, `currentPage`, `itemsPerPage` adaptativo |
+| `Hojas` | `src/components/hojas/Hojas.jsx` | Hojas otoñales animadas sobre el fondo (sustituye la antigua nieve) | Sin props |
 | `Footer` | `src/components/footer/Footer.jsx` | `Creado por: Gabriel Delgado Trujillo` + LinkedIn / GitHub `gadetru` | Sin props |
 
 ### Flujo filtro → proyectos
@@ -98,14 +103,15 @@ Array de 9 objetos:
 ```
 Tags usados: `maquetado (2)`, `React (4 + 2 mixtos React,JS)`, `node,JS (1)`. Imágenes resueltas desde `public/img/`.
 
-> Nota: `Proyectos.jsx` hace `fetch("../../project.json")`. En Vite lo robusto es `fetch("/project.json")` o `fetch(import.meta.env.BASE_URL + "project.json")`.
+> Nota: `Proyectos.jsx` hace `fetch("/project.json")` (ruta absoluta, robusta en Vite y en subrutas del build).
 
 ## Estilos
 
-- Variables `app.scss`: `$Gray-1:#FFFFFF, $Gray-2:#4F4F4F, $Gray-3:#828282, $Gray-4:#333333, $Blue-1:#2F80ED, $fondo-1:#f2f2f2`.
-- Fuente `montserrat` vía `@font-face` a `src/fonts/Montserrat-VariableFont_wght.ttf`. `Merienda One` de Google Fonts importada pero no aplicada. `lato` referenciada en `perfil.scss` sin importar.
-- Efecto nieve animada con `body:before/after` (`MOVE-BG translateY`), imágenes externas `freepngimg.com` / `laviwebfiles.com`.
-- Cards blancas `radius 12-24px` + sombras, hover `scale(1.1)`. Breakpoints de cards proyectos: `800-1200px 33%`, `480-800px 50%`, `<=480px 95%`.
+- Variables bosque en `app.scss`: `$bosque-fondo-base:#121c14, $bosque-superficie (rgba translúcida) / $bosque-superficie-solida, $bosque-borde, $bosque-texto, $bosque-texto-sec, $bosque-acento:#e67e22, $bosque-sombra`. Se conservan `$Gray-*` (jerarquía de texto) y `$Blue-1` sin borrar.
+- Fuente `montserrat` vía `@font-face` a `/fonts/Montserrat-VariableFont_wght.ttf` (en `public/fonts/`). `Merienda One` de Google Fonts importada pero no aplicada. `lato` referenciada en `perfil.scss` sin importar.
+- Fondo: foto `public/img/fondo-bosque.jpg` + velo + `Hojas` (hojas otoñales animadas, assets locales; la antigua nieve con URLs externas ya no existe).
+- Cards oscuras translúcidas `radius 24px` + sombras + `blur(10px)`, hover `scale(1.1)`. Breakpoints de cards proyectos: `800-1200px 33%`, `480-800px 50%`, `<=480px 95%`.
+- Skills colapsable: `.skill{height:auto}` + `box2/box3{align-self:start}` para que colapsado no deje hueco frente a Experiencia. Hobbies compacto: imágenes `height:140px` (`min-height:90px`).
 
 ## Guía de construcción
 
@@ -140,9 +146,7 @@ Sin variables de entorno. Sin backend. Los datos salen de `public/project.json`.
 
 ## Mejoras conocidas / TODO
 
-- [ ] `fetch("../../project.json")` → `/project.json` para que no falle en build/subrutas.
-- [ ] `const [count, setCount]` en `App.jsx` sin usar (resto plantilla Vite).
-- [ ] Nieve con URLs `http://` externas → descargar a `public/` o eliminar.
 - [ ] Sin `loading` / error handling en el fetch de proyectos.
 - [ ] Limpiar deps no usadas o importarlas (`@emotion`, `@fontsource/roboto`).
-- [ ] Eliminar `src/_redirects` duplicado, unificar `lang="es"` en `index.html`.
+- [ ] Eliminar `src/_redirects` duplicado.
+- [ ] Acordeón por categoría en Skills (el spec 006 preveía plegar cada categoría; hoy el toggle es global para todo el bloque).
