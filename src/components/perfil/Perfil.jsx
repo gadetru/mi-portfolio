@@ -35,7 +35,7 @@ export const Perfil = () => {
                 </div>   
                 
             </div>
-            <p>Soy un joven apasionado por la programación, en constante búsqueda de conocimiento como desarrollador full stack. Mi cartera refleja mi dedicación para crear soluciones tecnológicas innovadoras y eficientes mientras sigo aprendiendo y creciendo en este emocionante campo.</p> 
+            <p>Desarrollador de Software con experiencia desde 2023, especializado en FrontEnd y maquetación con JavaScript, HTML y CSS. Formado como Desarrollador de Aplicaciones Multiplataforma, con experiencia en Backend, bases de datos y aplicaciones .NET con C#. He participado en proyectos reales para clientes europeos, combinando desarrollo web, móvil y de escritorio.</p> 
         </div>
 
 
