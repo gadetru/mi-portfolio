@@ -17,6 +17,17 @@
     -webkit-backdrop-filter: blur(10px);
     color: $bosque-texto;
     font-family: montserrat;
+    max-height: 800px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: $bosque-borde transparent;
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $bosque-borde;
+        border-radius: 8px;
+    }
     h2{
         font-size: 24px;
         color: $bosque-texto;
@@ -90,6 +101,13 @@
     }
 }
 
+
+@media(max-width:720px){
+    .caja-experiencia{
+        max-height: none;
+        overflow-y: visible;
+    }
+}
 
 @media screen and (min-width: 480px) and (max-width: 1000px){
     .caja-experiencia{
