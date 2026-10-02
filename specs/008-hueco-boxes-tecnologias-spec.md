@@ -120,10 +120,10 @@ No-funcionales:
 ## 11. Checklist verificación (última, checkboxes listos para /verifier)
 
 - [ ] Botonera de 8 categorías visible al cargar, sin panel abierto y sin hueco bajo box4 (gap original hasta Filtro)
-- [ ] Una sola categoría visible a la vez a todo el ancho del box en vertical; re-pulsar cierra; cambiar de botón cambia el panel
-- [ ] `aria-expanded` por botón acorde a su panel
-- [ ] Animación de entrada del panel (y sin animación con `prefers-reduced-motion`)
+- [x] Una sola categoría visible a la vez a todo el ancho del box en vertical; re-pulsar cierra; cambiar de botón cambia el panel
+- [x] `aria-expanded` por botón acorde a su panel
+- [x] Animación de entrada del panel (y sin animación con `prefers-reduced-motion`)
 - [ ] En `<=720px` todo colapsado de inicio, mismo patrón, sin scroll horizontal ni solapes
 - [ ] Box4 reequilibrado sin hueco de fondo con cualquier categoría abierta
-- [ ] `npm run lint` cero warnings
-- [ ] `npm run build` genera `dist/` OK
+- [x] `npm run lint` cero warnings
+- [x] `npm run build` genera `dist/` OK

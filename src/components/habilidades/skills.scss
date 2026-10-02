@@ -9,8 +9,8 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     color: $bosque-texto;
-    height: auto;
-    align-self: start;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .tecnologias-toggle{
@@ -81,7 +81,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    transition: background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease;
 }
 .botonera-boton:hover{
     background-color: rgba(255, 255, 255, 0.12);
@@ -117,7 +117,7 @@
 
 .panel-tecnologias{
     border-top: 1px solid $bosque-borde;
-    animation: panel-entrada 0.28s ease;
+    animation: panel-entrada 0.45s ease;
 }
 @keyframes panel-entrada{
     from{
