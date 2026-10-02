@@ -9,21 +9,79 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     color: $bosque-texto;
-    height: 100%;
-    h2{
-        padding: 15px;
-        font-family:montserrat;
-        font-size: 24px;
-        color:$bosque-texto;
-        margin: 0;
-    }
+    height: auto;
+    align-self: start;
+}
+
+.tecnologias-toggle{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    margin: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: montserrat;
+    font-size: 24px;
+    font-weight: 600;
+    color: $bosque-texto;
+    text-align: left;
+}
+.tecnologias-toggle:hover{
+    background-color: rgba(255, 255, 255, 0.06);
+}
+.tecnologias-toggle:focus-visible{
+    outline: 2px solid $bosque-acento;
+    outline-offset: -2px;
+    border-radius: 12px;
+}
+.tecnologias-signo{
+    flex-shrink: 0;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+    color: $bosque-acento;
+}
+
+.desplegable{
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    visibility: hidden;
+    transition: grid-template-rows 0.35s ease, opacity 0.3s ease, visibility 0s linear 0.35s;
+}
+.desplegable.abierto{
+    grid-template-rows: 1fr;
+    opacity: 1;
+    visibility: visible;
+    transition: grid-template-rows 0.35s ease, opacity 0.3s ease;
+}
+.desplegable-interno{
+    overflow: hidden;
+    min-height: 0;
+}
+
+.categoria + .categoria{
+    border-top: 1px solid $bosque-borde;
+}
+.categoria-titulo{
+    padding: 10px 15px 6px;
+    margin: 0;
+    font-family: montserrat;
+    font-size: 18px;
+    font-weight: 600;
+    color: $bosque-texto;
 }
 
 .tecnologias{
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
-    padding: 15px;
+    padding: 0 15px 15px;
     div{
         display: flex;
         flex-direction: column;
@@ -42,4 +100,16 @@
     }
 }
 
-  
+@media(max-width:720px){
+    .tecnologias-toggle{
+        padding: 14px 15px;
+        font-size: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .desplegable,
+    .desplegable.abierto{
+        transition: none;
+    }
+}
