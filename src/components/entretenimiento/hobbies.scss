@@ -19,8 +19,8 @@
     div{
         img{
             width: 96%;
-            min-height: 150px;
-            height: 250px;
+            min-height: 90px;
+            height: 140px;
             object-fit: cover;
             object-position: center;
             margin: 2% 2% 0px 2%;
@@ -29,14 +29,14 @@
             
         }
         h3{
-            padding: 15px;
+            padding: 8px 15px;
             font-family:montserrat;
-            font-size: 18px;
+            font-size: 16px;
             color:$bosque-texto;
             margin: 0;
         }
         p{
-            padding: 0px 15px 15px 15px;
+            padding: 0px 15px 10px 15px;
             font-family:montserrat;
             font-size: 14px;
             color:$bosque-texto-sec;
