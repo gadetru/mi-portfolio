@@ -24,7 +24,7 @@
         justify-content: center;
         align-items: flex-start;
     }
-    img{
+    .foto-perfil img{
         width: 250px;
         max-width: 100%;
         height: auto;
@@ -102,10 +102,11 @@
     box-sizing: border-box;
    
     div{
-        height: 20px;
-        padding: 10px;
+        min-height: 44px;
+        padding: 8px 10px;
         display: flex;
         align-items: center;
+        gap: 12px;
         min-width: 0;
         max-width: 100%;
         box-sizing: border-box;
@@ -120,11 +121,11 @@
 
         }
         .icons{
-        width: 22px;
-        height: 22px;
-        margin: 5px;
-        padding: 8px;
-        padding-right: 10px;
+        width: 28px;
+        height: 28px;
+        margin: 0;
+        padding: 0;
+        flex-shrink: 0;
         filter: brightness(0) invert(1);
        
     }
@@ -152,7 +153,7 @@
             max-width: 100%;
             justify-content: center;
         }
-        img{
+        .foto-perfil img{
             width: 250px;
             max-width: calc(100% - 40px);
             height: auto;

@@ -35,17 +35,6 @@ const CATEGORIAS = [
     ],
   },
   {
-    slug: 'ides',
-    titulo: 'IDEs/entornos',
-    items: [
-      { nombre: 'IntelliJ', alt: 'icono IntelliJ', icon: intellijIcon },
-      { nombre: 'Visual Studio', alt: 'icono Visual Studio', icon: visualStudioIcon },
-      { nombre: 'VS Code', alt: 'icono VS Code', icon: vsCodeIcon },
-      { nombre: 'Android Studio', alt: 'icono Android Studio', icon: androidStudioIcon },
-      { nombre: 'OpenCode', alt: 'icono opencode', icon: openCodeIcon },
-    ],
-  },
-  {
     slug: 'marcas',
     titulo: 'Marcas',
     items: [
@@ -57,59 +46,73 @@ const CATEGORIAS = [
     ],
   },
   {
-    slug: 'resto',
-    titulo: 'Resto',
+    slug: 'frameworks',
+    titulo: 'Frameworks',
     items: [
       { nombre: 'React', alt: 'icono react', icon: reactIcon },
       { nombre: 'Angular', alt: 'Angular', icon: angularIcon },
       { nombre: 'Node', alt: 'icono node', icon: nodeIcon },
+      { nombre: '.NET', alt: 'icono dotnet', icon: dotnetIcon },
+    ],
+  },
+  {
+    slug: 'basedatos',
+    titulo: 'Bases de datos',
+    items: [
       { nombre: 'MongoDB', alt: 'mongo', icon: mongoIcon },
       { nombre: 'MySQL', alt: 'icono mysql', icon: mysqlIcon },
       { nombre: 'SQL Server', alt: 'icono SQL Server', icon: sqlServerIcon },
+    ],
+  },
+  {
+    slug: 'ides',
+    titulo: 'IDEs/entornos',
+    items: [
+      { nombre: 'IntelliJ', alt: 'icono IntelliJ', icon: intellijIcon },
+      { nombre: 'Visual Studio', alt: 'icono Visual Studio', icon: visualStudioIcon },
+      { nombre: 'VS Code', alt: 'icono VS Code', icon: vsCodeIcon },
+      { nombre: 'Android Studio', alt: 'icono Android Studio', icon: androidStudioIcon },
+      { nombre: 'OpenCode', alt: 'icono opencode', icon: openCodeIcon },
       { nombre: 'Git Hub', alt: 'github', icon: gitIcon },
-      { nombre: '.NET', alt: 'icono dotnet', icon: dotnetIcon },
     ],
   },
 ]
 
 export const Skills = () => {
-  const [abiertas, setAbiertas] = useState(() => {
-    const expandida = typeof window === 'undefined' || window.innerWidth > 720
-    return { lenguajes: expandida, ides: expandida, marcas: expandida, resto: expandida }
-  })
-
-  const alternar = (slug) => {
-    setAbiertas((prev) => ({ ...prev, [slug]: !prev[slug] }))
-  }
+  const [abierta, setAbierta] = useState(() => (
+    typeof window === 'undefined' ? true : window.innerWidth > 720
+  ))
 
   return (
 
     <div className="skill">
-      <h2>Tecnologías:</h2>
-      {CATEGORIAS.map((categoria) => (
-        <section key={categoria.slug} className="categoria">
-          <button
-            type="button"
-            className="categoria-cabecera"
-            aria-expanded={abiertas[categoria.slug]}
-            aria-controls={`categoria-${categoria.slug}`}
-            onClick={() => alternar(categoria.slug)}
-          >
-            <span>{categoria.titulo}</span>
-            <span className="categoria-signo" aria-hidden="true">{abiertas[categoria.slug] ? '−' : '+'}</span>
-          </button>
-          {abiertas[categoria.slug] && (
-            <div className="tecnologias" id={`categoria-${categoria.slug}`}>
-              {categoria.items.map((item) => (
-                <div key={item.nombre}>
-                  <img alt={item.alt} src={item.icon} />
-                  <p>{item.nombre}</p>
-                </div>
-              ))}
-            </div>
-          )}
-        </section>
-      ))}
+      <button
+        type="button"
+        className="tecnologias-toggle"
+        aria-expanded={abierta}
+        aria-controls="tecnologias-contenido"
+        onClick={() => setAbierta((v) => !v)}
+      >
+        <span>Tecnologías:</span>
+        <span className="tecnologias-signo" aria-hidden="true">{abierta ? '−' : '+'}</span>
+      </button>
+      <div className={`desplegable${abierta ? ' abierto' : ''}`} id="tecnologias-contenido">
+        <div className="desplegable-interno">
+          {CATEGORIAS.map((categoria) => (
+            <section key={categoria.slug} className="categoria">
+              <h3 className="categoria-titulo">{categoria.titulo}</h3>
+              <div className="tecnologias">
+                {categoria.items.map((item) => (
+                  <div key={item.nombre}>
+                    <img alt={item.alt} src={item.icon} />
+                    <p>{item.nombre}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+      </div>
 
     </div>
 

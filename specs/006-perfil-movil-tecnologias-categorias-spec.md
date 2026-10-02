@@ -93,12 +93,12 @@ No entra:
 - Acordeón: ¿solo en móvil (desktop siempre expandido) o plegable también en desktop?
 
 ## 11. Checklist verificación (última, checkboxes listos para /verifier)
-- [ ] A 360px y 390px en devtools no hay scroll horizontal y la foto no sobresale de su card
-- [ ] En desktop la card Perfil mantiene aspecto actual sin regresión
-- [ ] El box Tecnologías muestra cabeceras de categoría y cada tecnología está bajo una y solo una categoría
-- [ ] Nuevos iconos (mínimo Android Studio y SQL Server) visibles a tamaño homogéneo con alt descriptivo
-- [ ] Skills ocupa más altura que antes y Hobbies menos, sin roturas del grid
-- [ ] En <=720px las categorías funcionan como acordeón y nacen colapsadas; en desktop expandidas
-- [ ] Sin regresión del resto de boxes ni del flujo filtro→proyectos
-- [ ] `npm run lint` cero warnings
-- [ ] `npm run build` genera `dist/` OK
+- [X] A 360px y 390px en devtools no hay scroll horizontal y la foto no sobresale de su card
+- [X] En desktop la card Perfil mantiene aspecto actual sin regresión
+- [x] El box Tecnologías muestra cabeceras de categoría y cada tecnología está bajo una y solo una categoría
+- [x] Nuevos iconos (mínimo Android Studio y SQL Server) visibles a tamaño homogéneo con alt descriptivo
+- [X] Skills ocupa más altura que antes y Hobbies menos, sin roturas del grid
+- [X] En <=720px las categorías funcionan como acordeón y nacen colapsadas; en desktop expandidas
+- [X] Sin regresión del resto de boxes ni del flujo filtro→proyectos
+- [x] `npm run lint` cero warnings
+- [x] `npm run build` genera `dist/` OK
