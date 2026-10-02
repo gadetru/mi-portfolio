@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './skills.scss'
 import reactIcon from'../../img/react.png'
 import javaScripIcon from'../../img/javascript.png'
@@ -14,74 +15,101 @@ import javaIcon from'../../img/java.png'
 import openCodeIcon from'../../img/opencode.png'
 import csharpIcon from'../../img/csharp.png'
 import dotnetIcon from'../../img/dotnet.png'
+import intellijIcon from'../../img/intellij.png'
+import visualStudioIcon from'../../img/visualstudio.png'
+import vsCodeIcon from'../../img/vscode.png'
+import androidStudioIcon from'../../img/androidstudio.png'
+import sqlServerIcon from'../../img/sqlserver.png'
+import xmlIcon from'../../img/xml.png'
+import xamlIcon from'../../img/xaml.png'
+
+const CATEGORIAS = [
+  {
+    slug: 'lenguajes',
+    titulo: 'Lenguajes',
+    items: [
+      { nombre: 'javaScript', alt: 'icono javaScript', icon: javaScripIcon },
+      { nombre: 'typeScript', alt: 'icono typeScript', icon: typeScriptIcon },
+      { nombre: 'Java', alt: 'icono java', icon: javaIcon },
+      { nombre: 'C#', alt: 'icono csharp', icon: csharpIcon },
+    ],
+  },
+  {
+    slug: 'ides',
+    titulo: 'IDEs/entornos',
+    items: [
+      { nombre: 'IntelliJ', alt: 'icono IntelliJ', icon: intellijIcon },
+      { nombre: 'Visual Studio', alt: 'icono Visual Studio', icon: visualStudioIcon },
+      { nombre: 'VS Code', alt: 'icono VS Code', icon: vsCodeIcon },
+      { nombre: 'Android Studio', alt: 'icono Android Studio', icon: androidStudioIcon },
+      { nombre: 'OpenCode', alt: 'icono opencode', icon: openCodeIcon },
+    ],
+  },
+  {
+    slug: 'marcas',
+    titulo: 'Marcas',
+    items: [
+      { nombre: 'HTML', alt: 'icono HTML', icon: htmlIcon },
+      { nombre: 'CSS', alt: 'CSS', icon: cssIcon },
+      { nombre: 'SASS', alt: 'icono sass', icon: sassIcon },
+      { nombre: 'XML', alt: 'icono XML', icon: xmlIcon },
+      { nombre: 'XAML', alt: 'icono XAML', icon: xamlIcon },
+    ],
+  },
+  {
+    slug: 'resto',
+    titulo: 'Resto',
+    items: [
+      { nombre: 'React', alt: 'icono react', icon: reactIcon },
+      { nombre: 'Angular', alt: 'Angular', icon: angularIcon },
+      { nombre: 'Node', alt: 'icono node', icon: nodeIcon },
+      { nombre: 'MongoDB', alt: 'mongo', icon: mongoIcon },
+      { nombre: 'MySQL', alt: 'icono mysql', icon: mysqlIcon },
+      { nombre: 'SQL Server', alt: 'icono SQL Server', icon: sqlServerIcon },
+      { nombre: 'Git Hub', alt: 'github', icon: gitIcon },
+      { nombre: '.NET', alt: 'icono dotnet', icon: dotnetIcon },
+    ],
+  },
+]
 
 export const Skills = () => {
+  const [abiertas, setAbiertas] = useState(() => {
+    const expandida = typeof window === 'undefined' || window.innerWidth > 720
+    return { lenguajes: expandida, ides: expandida, marcas: expandida, resto: expandida }
+  })
+
+  const alternar = (slug) => {
+    setAbiertas((prev) => ({ ...prev, [slug]: !prev[slug] }))
+  }
+
   return (
 
     <div className="skill">
       <h2>Tecnologías:</h2>
-      <div className='tecnologias'>
-        <div> 
-            <img alt='icono react' src={reactIcon}/> 
-            <p>React</p>
-        </div>
-        <div> 
-            <img alt='icono javaScript' src={javaScripIcon}/> 
-            <p>javaScript</p>
-        </div>
-        <div> 
-            <img alt='icono HTML' src={htmlIcon}/> 
-            <p>HTML</p>
-        </div>
-        <div> 
-            <img alt='CSS' src={cssIcon}/> 
-            <p>CSS</p>
-        </div>
-        <div> 
-            <img alt='icono sass' src={sassIcon}/> 
-            <p>SASS</p>
-        </div>
-        <div> 
-            <img alt='icono node' src={nodeIcon}/> 
-            <p>Node</p>
-        </div>
-        <div> 
-            <img alt='mongo' src={mongoIcon}/> 
-            <p>MongoDB</p>
-        </div>
-        <div> 
-            <img alt='icono mysql' src={mysqlIcon}/> 
-            <p>MySQL</p>
-        </div>
-        <div> 
-            <img alt='icono mysql' src={typeScriptIcon}/> 
-            <p>typeScript</p>
-        </div>
-        <div> 
-            <img alt='Angular' src={angularIcon}/> 
-            <p>Angular</p>
-        </div>
-        <div> 
-            <img alt='github' src={gitIcon}/> 
-            <p>Git Hub</p>
-        </div>
-        <div> 
-            <img alt='icono java' src={javaIcon}/> 
-            <p>Java</p>
-        </div>
-        <div> 
-            <img alt='icono opencode' src={openCodeIcon}/> 
-            <p>OpenCode</p>
-        </div>
-        <div> 
-            <img alt='icono csharp' src={csharpIcon}/> 
-            <p>C#</p>
-        </div>
-        <div> 
-            <img alt='icono dotnet' src={dotnetIcon}/> 
-            <p>.NET</p>
-        </div>
-      </div>
+      {CATEGORIAS.map((categoria) => (
+        <section key={categoria.slug} className="categoria">
+          <button
+            type="button"
+            className="categoria-cabecera"
+            aria-expanded={abiertas[categoria.slug]}
+            aria-controls={`categoria-${categoria.slug}`}
+            onClick={() => alternar(categoria.slug)}
+          >
+            <span>{categoria.titulo}</span>
+            <span className="categoria-signo" aria-hidden="true">{abiertas[categoria.slug] ? '−' : '+'}</span>
+          </button>
+          {abiertas[categoria.slug] && (
+            <div className="tecnologias" id={`categoria-${categoria.slug}`}>
+              {categoria.items.map((item) => (
+                <div key={item.nombre}>
+                  <img alt={item.alt} src={item.icon} />
+                  <p>{item.nombre}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </section>
+      ))}
 
     </div>
 
