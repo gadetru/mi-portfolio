@@ -9,8 +9,8 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     color: $bosque-texto;
-    height: auto;
-    align-self: start;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .tecnologias-toggle{
@@ -47,6 +47,56 @@
     color: $bosque-acento;
 }
 
+.tecnologias-titulo{
+    padding: 15px 15px 10px;
+    margin: 0;
+    font-family: montserrat;
+    font-size: 24px;
+    font-weight: 600;
+    color: $bosque-texto;
+}
+
+.botonera{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 15px 12px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.botonera-boton{
+    flex: 0 1 auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid $bosque-borde;
+    background-color: rgba(255, 255, 255, 0.06);
+    color: $bosque-texto;
+    font-family: montserrat;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease;
+}
+.botonera-boton:hover{
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.24);
+}
+.botonera-boton:focus-visible{
+    outline: 2px solid $bosque-acento;
+    outline-offset: 2px;
+}
+.botonera-boton.activo{
+    background-color: $bosque-acento;
+    border-color: $bosque-acento;
+    color: #121c14;
+}
+
 .desplegable{
     display: grid;
     grid-template-rows: 0fr;
@@ -63,6 +113,21 @@
 .desplegable-interno{
     overflow: hidden;
     min-height: 0;
+}
+
+.panel-tecnologias{
+    border-top: 1px solid $bosque-borde;
+    animation: panel-entrada 0.45s ease;
+}
+@keyframes panel-entrada{
+    from{
+        opacity: 0;
+        transform: translateX(-12px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .categoria + .categoria{
@@ -105,11 +170,25 @@
         padding: 14px 15px;
         font-size: 20px;
     }
+    .tecnologias-titulo{
+        padding: 14px 15px 10px;
+        font-size: 20px;
+    }
+    .botonera-boton{
+        font-size: 13px;
+        padding: 7px 12px;
+    }
 }
 
 @media (prefers-reduced-motion: reduce){
     .desplegable,
     .desplegable.abierto{
+        transition: none;
+    }
+    .panel-tecnologias{
+        animation: none;
+    }
+    .botonera-boton{
         transition: none;
     }
 }

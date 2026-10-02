@@ -105,40 +105,51 @@ const CATEGORIAS = [
 ]
 
 export const Skills = () => {
-  const [abierta, setAbierta] = useState(() => (
-    typeof window === 'undefined' ? true : window.innerWidth > 720
-  ))
+  const [activa, setActiva] = useState(null)
 
   return (
 
     <div className="skill">
-      <button
-        type="button"
-        className="tecnologias-toggle"
-        aria-expanded={abierta}
-        aria-controls="tecnologias-contenido"
-        onClick={() => setAbierta((v) => !v)}
-      >
-        <span>Tecnologías:</span>
-        <span className="tecnologias-signo" aria-hidden="true">{abierta ? '−' : '+'}</span>
-      </button>
-      <div className={`desplegable${abierta ? ' abierto' : ''}`} id="tecnologias-contenido">
-        <div className="desplegable-interno">
-          {CATEGORIAS.map((categoria) => (
-            <section key={categoria.slug} className="categoria">
-              <h3 className="categoria-titulo">{categoria.titulo}</h3>
-              <div className="tecnologias">
-                {categoria.items.map((item) => (
-                  <div key={item.nombre}>
-                    {item.icon ? <img alt={item.alt} src={item.icon} /> : null}
-                    <p>{item.nombre}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-          ))}
-        </div>
+      <h2 className="tecnologias-titulo">Tecnologías:</h2>
+      <div className="botonera" role="group" aria-label="Categorías de tecnologías">
+        {CATEGORIAS.map((categoria) => {
+          const abierta = activa === categoria.slug
+          return (
+            <button
+              key={categoria.slug}
+              type="button"
+              className={`botonera-boton${abierta ? ' activo' : ''}`}
+              aria-expanded={abierta}
+              aria-controls={`panel-${categoria.slug}`}
+              id={`boton-${categoria.slug}`}
+              onClick={() => setActiva((prev) => (prev === categoria.slug ? null : categoria.slug))}
+            >
+              {categoria.titulo}
+            </button>
+          )
+        })}
       </div>
+      {CATEGORIAS.map((categoria) => (
+        activa === categoria.slug ? (
+          <div
+            key={categoria.slug}
+            className="panel-tecnologias"
+            id={`panel-${categoria.slug}`}
+            role="region"
+            aria-labelledby={`boton-${categoria.slug}`}
+          >
+            <h3 className="categoria-titulo">{categoria.titulo}</h3>
+            <div className="tecnologias">
+              {categoria.items.map((item) => (
+                <div key={item.nombre}>
+                  {item.icon ? <img alt={item.alt} src={item.icon} /> : null}
+                  <p>{item.nombre}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : null
+      ))}
 
     </div>
 

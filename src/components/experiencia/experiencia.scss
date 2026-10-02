@@ -9,7 +9,7 @@
     border-radius: 24px;
     border: 1px solid $bosque-borde;
     box-shadow: 0 12px 32px $bosque-sombra, inset 0 1px 0 rgba(255, 255, 255, 0.06);
-    padding: 10px 20px 10px 20px;
+    padding: 14px 20px 14px 20px;
     box-sizing: border-box;
     background-color: $bosque-superficie-solida;
     background-color: $bosque-superficie;
@@ -17,7 +17,7 @@
     -webkit-backdrop-filter: blur(10px);
     color: $bosque-texto;
     font-family: montserrat;
-    max-height: 800px;
+    max-height: 900px;
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: $bosque-borde transparent;
@@ -31,6 +31,10 @@
     h2{
         font-size: 24px;
         color: $bosque-texto;
+        margin: 14px 0 8px;
+        &:first-child{
+            margin-top: 0;
+        }
     }
     .mi-formacion{
         display: flex;
@@ -48,7 +52,7 @@
             color: $bosque-texto-sec;
             font-size: 18px;
             li{
-                margin-bottom: 10px;
+                margin-bottom: 8px;
                 word-wrap: break-word;
                 
             }
@@ -72,7 +76,7 @@
             font-size: 18px;
             li{
                 display: block;
-                margin-bottom: 10px;
+                margin-bottom: 8px;
                 word-wrap: break-word;
             }
         }
@@ -89,11 +93,13 @@
                 width: 20%;
                 font-size: 18px;
                 color: $bosque-texto;
+                margin: 8px 0;
             }
             p{
                 width: 80%;
                 color: $bosque-texto-sec;
                 font-size: 18px;
+                margin: 8px 0;
             }
             
 
