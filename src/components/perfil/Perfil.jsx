@@ -7,7 +7,9 @@ export const Perfil = () => {
   return (
     <div className='perfil'>
 
-        <img className=' yomismo' src={perfil1} alt='micareto'/>
+        <div className='foto-perfil'>
+            <img className=' yomismo' src={perfil1} alt='micareto'/>
+        </div>
 
         <div className='contenido-personal'>
             <div className='contenedor'>

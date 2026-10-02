@@ -42,6 +42,8 @@ body{
     background-repeat: no-repeat;
     width: 100%;
     box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 // #root > div{
@@ -60,7 +62,17 @@ body{
     //grid-template-rows: 1fr 1fr ;
     grid-gap: 20px; /* Espaciado entre elementos */
     padding: 20px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
   } 
+
+  .grid-container-1 > * {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
   
   .box1 {
     grid-column-start: 1;
@@ -107,9 +119,17 @@ body{
 
   @media(max-width:720px){
 
+    body{
+      padding: 16px;
+    }
+
     .grid-container-1 {
       grid-gap: 10px; /* Espaciado entre elementos */
       padding: 0px;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
     } 
     
     .box1 {
