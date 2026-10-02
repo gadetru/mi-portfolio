@@ -115,6 +115,21 @@
     min-height: 0;
 }
 
+.panel-tecnologias{
+    border-top: 1px solid $bosque-borde;
+    animation: panel-entrada 0.28s ease;
+}
+@keyframes panel-entrada{
+    from{
+        opacity: 0;
+        transform: translateX(-12px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .categoria + .categoria{
     border-top: 1px solid $bosque-borde;
 }
@@ -168,6 +183,12 @@
 @media (prefers-reduced-motion: reduce){
     .desplegable,
     .desplegable.abierto{
+        transition: none;
+    }
+    .panel-tecnologias{
+        animation: none;
+    }
+    .botonera-boton{
         transition: none;
     }
 }
