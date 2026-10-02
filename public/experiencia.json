@@ -1,0 +1,68 @@
+{
+  "empleos": [
+    {
+      "empresa": "Kamaleonte S.L",
+      "rol": "Desarrollador FullStack",
+      "ubicacion": "San Fernando, España",
+      "periodo": "Marzo 2026 – Junio 2026",
+      "logros": [
+        "Desarrollo de dos aplicaciones de escritorio con WPF, C# y .NET, con nuevas secciones de interfaz en XAML y su lógica de negocio.",
+        "Migración de una API legacy basada en XML hacia una API REST sobre HTTP, mejorando rendimiento y mantenibilidad.",
+        "Diseño e implementación de nuevos endpoints entre servicios internos e integración con APIs externas de pagos con tarjeta.",
+        "Ampliación del modelo de datos con nuevas tablas en SQL Server, coherentes con la arquitectura existente.",
+        "Flujo ordenado en GitHub con ramas por funcionalidad para revisión de código y seguimiento de avances."
+      ]
+    },
+    {
+      "empresa": "Nükrum Technologies",
+      "rol": "Desarrollador FullStack",
+      "ubicacion": "Tarifa, España",
+      "periodo": "Julio 2023 – Octubre 2023",
+      "logros": [
+        "Creación de una landing page sobre tratamientos médicos innovadores.",
+        "Base de datos en MySQL para el registro de nuevos usuarios y sus consultas.",
+        "Endpoints de conexión a la base de datos con Node.js y Express.",
+        "Control de la recepción de comentarios con Nodemailer.",
+        "Formularios de registro en HTML5 y CSS3 con validaciones en JS."
+      ]
+    },
+    {
+      "empresa": "AICrop (startup)",
+      "rol": "Desarrollador FullStack",
+      "ubicacion": "Tarifa, España",
+      "periodo": "Enero 2023 – Abril 2023",
+      "logros": [
+        "Proyecto digital de AIcrop para la gestión automatizada de invernaderos.",
+        "Desarrollo y maquetación front end con implementación de validaciones.",
+        "Gestión y diseño de la base de datos y peticiones al servidor."
+      ]
+    }
+  ],
+  "formacion": [
+    {
+      "centro": "Centro FP oficial Ilerna",
+      "titulo": "Ciclo formativo superior en informática, Desarrollo de aplicaciones multiplataforma",
+      "ubicacion": "Tarifa, España",
+      "periodo": "Sept 2024 – Junio 2026",
+      "detalle": "Título DAM."
+    },
+    {
+      "centro": "SocraTech",
+      "titulo": "Full Stack Web developer bootcamp",
+      "ubicacion": "Torrelavega, España",
+      "periodo": "Nov 2022 – Mar 2023",
+      "detalle": "Bootcamp full stack web."
+    },
+    {
+      "centro": "Udemy",
+      "titulo": "Cursos y certificados",
+      "periodo": "",
+      "detalle": "Maquetado HTML, CSS3, JavaScript, NodeJS; Java EE, Spring Boot y microservicios; C#, .NET y WPF; Kotlin y Android; IA, OpenCode, MCPs y Supabase."
+    }
+  ],
+  "idiomas": [
+    { "lengua": "Español", "nivel": "nativo" },
+    { "lengua": "Alemán", "nivel": "alto" },
+    { "lengua": "Inglés", "nivel": "medio" }
+  ]
+}

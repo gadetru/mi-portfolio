@@ -28,21 +28,24 @@ const CATEGORIAS = [
     slug: 'lenguajes',
     titulo: 'Lenguajes',
     items: [
-      { nombre: 'javaScript', alt: 'icono javaScript', icon: javaScripIcon },
-      { nombre: 'typeScript', alt: 'icono typeScript', icon: typeScriptIcon },
       { nombre: 'Java', alt: 'icono java', icon: javaIcon },
       { nombre: 'C#', alt: 'icono csharp', icon: csharpIcon },
+      { nombre: 'javaScript', alt: 'icono javaScript', icon: javaScripIcon },
+      { nombre: 'typeScript', alt: 'icono typeScript', icon: typeScriptIcon },
+      { nombre: 'Kotlin', alt: 'Kotlin' },
+      { nombre: 'SQL', alt: 'SQL' },
+      { nombre: 'PL/SQL', alt: 'PL/SQL' },
     ],
   },
   {
     slug: 'marcas',
     titulo: 'Marcas',
     items: [
-      { nombre: 'HTML', alt: 'icono HTML', icon: htmlIcon },
-      { nombre: 'CSS', alt: 'CSS', icon: cssIcon },
-      { nombre: 'SASS', alt: 'icono sass', icon: sassIcon },
+      { nombre: 'HTML5', alt: 'icono HTML5', icon: htmlIcon },
       { nombre: 'XML', alt: 'icono XML', icon: xmlIcon },
       { nombre: 'XAML', alt: 'icono XAML', icon: xamlIcon },
+      { nombre: 'CSS', alt: 'CSS', icon: cssIcon },
+      { nombre: 'SASS', alt: 'icono sass', icon: sassIcon },
     ],
   },
   {
@@ -59,8 +62,8 @@ const CATEGORIAS = [
     slug: 'basedatos',
     titulo: 'Bases de datos',
     items: [
-      { nombre: 'MongoDB', alt: 'mongo', icon: mongoIcon },
       { nombre: 'MySQL', alt: 'icono mysql', icon: mysqlIcon },
+      { nombre: 'MongoDB', alt: 'mongo', icon: mongoIcon },
       { nombre: 'SQL Server', alt: 'icono SQL Server', icon: sqlServerIcon },
     ],
   },
@@ -68,12 +71,35 @@ const CATEGORIAS = [
     slug: 'ides',
     titulo: 'IDEs/entornos',
     items: [
-      { nombre: 'IntelliJ', alt: 'icono IntelliJ', icon: intellijIcon },
+      { nombre: 'IntelliJ IDEA', alt: 'icono IntelliJ IDEA', icon: intellijIcon },
       { nombre: 'Visual Studio', alt: 'icono Visual Studio', icon: visualStudioIcon },
-      { nombre: 'VS Code', alt: 'icono VS Code', icon: vsCodeIcon },
+      { nombre: 'Visual Studio Code', alt: 'icono Visual Studio Code', icon: vsCodeIcon },
+      { nombre: 'Eclipse', alt: 'Eclipse' },
       { nombre: 'Android Studio', alt: 'icono Android Studio', icon: androidStudioIcon },
+    ],
+  },
+  {
+    slug: 'controlversiones',
+    titulo: 'Control de versiones',
+    items: [
+      { nombre: 'Git', alt: 'icono git', icon: gitIcon },
+      { nombre: 'GitHub', alt: 'GitHub' },
+    ],
+  },
+  {
+    slug: 'iaherramientas',
+    titulo: 'IA y herramientas',
+    items: [
       { nombre: 'OpenCode', alt: 'icono opencode', icon: openCodeIcon },
-      { nombre: 'Git Hub', alt: 'github', icon: gitIcon },
+      { nombre: 'Ollama', alt: 'Ollama' },
+      { nombre: 'LM Studio', alt: 'LM Studio' },
+    ],
+  },
+  {
+    slug: 'so',
+    titulo: 'Sistemas operativos',
+    items: [
+      { nombre: 'Windows', alt: 'Windows' },
     ],
   },
 ]
@@ -104,7 +130,7 @@ export const Skills = () => {
               <div className="tecnologias">
                 {categoria.items.map((item) => (
                   <div key={item.nombre}>
-                    <img alt={item.alt} src={item.icon} />
+                    {item.icon ? <img alt={item.alt} src={item.icon} /> : null}
                     <p>{item.nombre}</p>
                   </div>
                 ))}
