@@ -1,5 +1,5 @@
 # Fix imagen perfil en móvil + tecnologías por categorías
-Estado: aprobado
+Estado: implementado
 Depende de: specs/001-ampliar-tecnologias-spec.md (reutiliza su patrón import PNG desde `src/img/` + `div > img + p` y su lista de 15 tecnologías como base a reagrupar)
 Fecha de creación: 2026-10-02
 Descripción: Evitar que la foto de perfil se salga de su card en móvil real y reagrupar el box de tecnologías por categorías (lenguajes, IDEs/entornos, marcas, resto), haciendo crecer Skills y compactando Hobbies.
