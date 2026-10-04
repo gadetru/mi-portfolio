@@ -24,5 +24,18 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "sass": "^1.69.5",
     "vite": "^4.4.5"
-  }
+  },
+  "description": "Portfolio personal de una sola vista (SPA) estilo DevChallenges: presentación, tecnologías, hobbies, experiencia, filtro por tag + listado de proyectos paginado y footer social.",
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gadetru/mi-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gadetru/mi-portfolio/issues"
+  },
+  "homepage": "https://github.com/gadetru/mi-portfolio#readme"
 }
