@@ -22,6 +22,14 @@ import androidStudioIcon from'../../img/androidstudio.png'
 import sqlServerIcon from'../../img/sqlserver.png'
 import xmlIcon from'../../img/xml.png'
 import xamlIcon from'../../img/xaml.png'
+import kotlinIcon from'../../img/kotlin.png'
+import sqlIcon from'../../img/sql.png'
+import plsqlIcon from'../../img/plsql.png'
+import eclipseIcon from'../../img/eclipse.png'
+import githubIcon from'../../img/github.png'
+import ollamaIcon from'../../img/ollama.png'
+import lmstudioIcon from'../../img/lmstudio.png'
+import windowsIcon from'../../img/windows.png'
 
 const CATEGORIAS = [
   {
@@ -32,9 +40,9 @@ const CATEGORIAS = [
       { nombre: 'C#', alt: 'icono csharp', icon: csharpIcon },
       { nombre: 'javaScript', alt: 'icono javaScript', icon: javaScripIcon },
       { nombre: 'typeScript', alt: 'icono typeScript', icon: typeScriptIcon },
-      { nombre: 'Kotlin', alt: 'Kotlin' },
-      { nombre: 'SQL', alt: 'SQL' },
-      { nombre: 'PL/SQL', alt: 'PL/SQL' },
+      { nombre: 'Kotlin', alt: 'icono Kotlin', icon: kotlinIcon },
+      { nombre: 'SQL', alt: 'icono SQL', icon: sqlIcon },
+      { nombre: 'PL/SQL', alt: 'icono PL/SQL', icon: plsqlIcon },
     ],
   },
   {
@@ -74,7 +82,7 @@ const CATEGORIAS = [
       { nombre: 'IntelliJ IDEA', alt: 'icono IntelliJ IDEA', icon: intellijIcon },
       { nombre: 'Visual Studio', alt: 'icono Visual Studio', icon: visualStudioIcon },
       { nombre: 'Visual Studio Code', alt: 'icono Visual Studio Code', icon: vsCodeIcon },
-      { nombre: 'Eclipse', alt: 'Eclipse' },
+      { nombre: 'Eclipse', alt: 'icono Eclipse', icon: eclipseIcon },
       { nombre: 'Android Studio', alt: 'icono Android Studio', icon: androidStudioIcon },
     ],
   },
@@ -83,7 +91,7 @@ const CATEGORIAS = [
     titulo: 'Control de versiones',
     items: [
       { nombre: 'Git', alt: 'icono git', icon: gitIcon },
-      { nombre: 'GitHub', alt: 'GitHub' },
+      { nombre: 'GitHub', alt: 'icono GitHub', icon: githubIcon },
     ],
   },
   {
@@ -91,15 +99,15 @@ const CATEGORIAS = [
     titulo: 'IA y herramientas',
     items: [
       { nombre: 'OpenCode', alt: 'icono opencode', icon: openCodeIcon },
-      { nombre: 'Ollama', alt: 'Ollama' },
-      { nombre: 'LM Studio', alt: 'LM Studio' },
+      { nombre: 'Ollama', alt: 'icono Ollama', icon: ollamaIcon },
+      { nombre: 'LM Studio', alt: 'icono LM Studio', icon: lmstudioIcon },
     ],
   },
   {
     slug: 'so',
     titulo: 'Sistemas operativos',
     items: [
-      { nombre: 'Windows', alt: 'Windows' },
+      { nombre: 'Windows', alt: 'icono Windows', icon: windowsIcon },
     ],
   },
 ]
