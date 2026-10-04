@@ -1,0 +1,152 @@
+- generic [ref=e3]:
+  - generic [ref=e5]:
+    - img "micareto" [ref=e7]
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - heading "Gabriel Delgado Trujillo" [level=2] [ref=e11]
+          - heading "Full Stack developer" [level=3] [ref=e12]
+        - generic [ref=e13]:
+          - generic [ref=e14]:
+            - img "correo" [ref=e15]
+            - link "gadetru@gmail.com" [ref=e16] [cursor=pointer]:
+              - /url: mailto:gadetru@gmail.com
+          - generic [ref=e17]:
+            - img "telefonito" [ref=e18]
+            - link "+34644172604" [ref=e19] [cursor=pointer]:
+              - /url: tel:+34644172604
+      - paragraph [ref=e20]: Desarrollador de Software con experiencia desde 2023, especializado en FrontEnd y maquetación con JavaScript, HTML y CSS. Formado como Desarrollador de Aplicaciones Multiplataforma, con experiencia en Backend, bases de datos y aplicaciones .NET con C#. He participado en proyectos reales para clientes europeos, combinando desarrollo web, móvil y de escritorio.
+  - generic [ref=e22]:
+    - heading "Tecnologías:" [level=2] [ref=e23]
+    - group "Categorías de tecnologías" [ref=e24]:
+      - button "Lenguajes" [expanded] [active] [ref=e25] [cursor=pointer]
+      - button "Marcas" [ref=e26] [cursor=pointer]
+      - button "Frameworks" [ref=e27] [cursor=pointer]
+      - button "Bases de datos" [ref=e28] [cursor=pointer]
+      - button "IDEs/entornos" [ref=e29] [cursor=pointer]
+      - button "Control de versiones" [ref=e30] [cursor=pointer]
+      - button "IA y herramientas" [ref=e31] [cursor=pointer]
+      - button "Sistemas operativos" [ref=e32] [cursor=pointer]
+    - region "Lenguajes" [ref=e237]:
+      - heading "Lenguajes" [level=3] [ref=e238]
+      - generic [ref=e239]:
+        - generic [ref=e240]:
+          - img "icono java" [ref=e241]
+          - paragraph [ref=e242]: Java
+        - generic [ref=e243]:
+          - img "icono csharp" [ref=e244]
+          - paragraph [ref=e245]: C#
+        - generic [ref=e246]:
+          - img "icono javaScript" [ref=e247]
+          - paragraph [ref=e248]: javaScript
+        - generic [ref=e249]:
+          - img "icono typeScript" [ref=e250]
+          - paragraph [ref=e251]: typeScript
+        - generic [ref=e252]:
+          - img "icono Kotlin" [ref=e253]
+          - paragraph [ref=e254]: Kotlin
+        - generic [ref=e255]:
+          - img "icono SQL" [ref=e256]
+          - paragraph [ref=e257]: SQL
+        - generic [ref=e258]:
+          - img "icono PL/SQL" [ref=e259]
+          - paragraph [ref=e260]: PL/SQL
+  - generic [ref=e34]:
+    - heading "Mis Hobbies:" [level=2] [ref=e35]
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - img "bicicleta" [ref=e38]
+        - heading "Ciclismo" [level=3] [ref=e39]
+        - paragraph [ref=e40]: Me encanta hacer rutas de trail y enduro por las montañas
+      - generic [ref=e41]:
+        - img "montaña" [ref=e42]
+        - heading "Senderismo" [level=3] [ref=e43]
+        - paragraph [ref=e44]: Caminar por senderos y acampar al aire libre
+  - generic [ref=e46]:
+    - heading "Experiencia en empresas:" [level=2] [ref=e47]
+    - generic [ref=e48]:
+      - heading "Kamaleonte S.L" [level=3] [ref=e49]
+      - list [ref=e50]:
+        - listitem [ref=e51]: Desarrollador FullStack — San Fernando, España (Marzo 2026 – Junio 2026)
+        - listitem [ref=e52]: Desarrollo de dos aplicaciones de escritorio con WPF, C# y .NET, con nuevas secciones de interfaz en XAML y su lógica de negocio.
+        - listitem [ref=e53]: Migración de una API legacy basada en XML hacia una API REST sobre HTTP, mejorando rendimiento y mantenibilidad.
+        - listitem [ref=e54]: Diseño e implementación de nuevos endpoints entre servicios internos e integración con APIs externas de pagos con tarjeta.
+        - listitem [ref=e55]: Ampliación del modelo de datos con nuevas tablas en SQL Server, coherentes con la arquitectura existente.
+        - listitem [ref=e56]: Flujo ordenado en GitHub con ramas por funcionalidad para revisión de código y seguimiento de avances.
+    - generic [ref=e57]:
+      - heading "Nükrum Technologies" [level=3] [ref=e58]
+      - list [ref=e59]:
+        - listitem [ref=e60]: Desarrollador FullStack — Tarifa, España (Julio 2023 – Octubre 2023)
+        - listitem [ref=e61]: Creación de una landing page sobre tratamientos médicos innovadores.
+        - listitem [ref=e62]: Base de datos en MySQL para el registro de nuevos usuarios y sus consultas.
+        - listitem [ref=e63]: Endpoints de conexión a la base de datos con Node.js y Express.
+        - listitem [ref=e64]: Control de la recepción de comentarios con Nodemailer.
+        - listitem [ref=e65]: Formularios de registro en HTML5 y CSS3 con validaciones en JS.
+    - generic [ref=e66]:
+      - heading "AICrop (startup)" [level=3] [ref=e67]
+      - list [ref=e68]:
+        - listitem [ref=e69]: Desarrollador FullStack — Tarifa, España (Enero 2023 – Abril 2023)
+        - listitem [ref=e70]: Proyecto digital de AIcrop para la gestión automatizada de invernaderos.
+        - listitem [ref=e71]: Desarrollo y maquetación front end con implementación de validaciones.
+        - listitem [ref=e72]: Gestión y diseño de la base de datos y peticiones al servidor.
+    - heading "Formación:" [level=2] [ref=e73]
+    - generic [ref=e74]:
+      - heading "Centro FP oficial Ilerna" [level=3] [ref=e75]
+      - list [ref=e76]:
+        - listitem [ref=e77]: Ciclo formativo superior en informática, Desarrollo de aplicaciones multiplataforma (Sept 2024 – Junio 2026) — Tarifa, España
+        - listitem [ref=e78]: Título DAM.
+    - generic [ref=e79]:
+      - heading "SocraTech" [level=3] [ref=e80]
+      - list [ref=e81]:
+        - listitem [ref=e82]: Full Stack Web developer bootcamp (Nov 2022 – Mar 2023) — Torrelavega, España
+        - listitem [ref=e83]: Bootcamp full stack web.
+    - generic [ref=e84]:
+      - heading "Udemy" [level=3] [ref=e85]
+      - list [ref=e86]:
+        - listitem [ref=e87]: Cursos y certificados
+        - listitem [ref=e88]: Maquetado HTML, CSS3, JavaScript, NodeJS; Java EE, Spring Boot y microservicios; C#, .NET y WPF; Kotlin y Android; IA, OpenCode, MCPs y Supabase.
+    - generic [ref=e89]:
+      - heading "Idiomas:" [level=2] [ref=e90]
+      - generic [ref=e91]:
+        - heading "Español:" [level=3] [ref=e92]
+        - paragraph [ref=e93]: nativo
+      - generic [ref=e94]:
+        - heading "Alemán:" [level=3] [ref=e95]
+        - paragraph [ref=e96]: alto
+      - generic [ref=e97]:
+        - heading "Inglés:" [level=3] [ref=e98]
+        - paragraph [ref=e99]: medio
+  - generic [ref=e101]:
+    - button "Maquetación" [ref=e102]
+    - button "React" [ref=e103]
+    - button "JavaScript" [ref=e104]
+    - button "Node" [ref=e105]
+    - button "Todo" [ref=e106]
+  - generic [ref=e108]:
+    - article [ref=e110]:
+      - generic [ref=e111]:
+        - img "404 not found" [ref=e113]
+        - generic [ref=e114]:
+          - paragraph [ref=e115]: "#maquetado"
+          - heading "404 not found" [level=2] [ref=e116]
+          - paragraph [ref=e117]: Primer proyecto, página estática de un error 404
+        - generic [ref=e118]:
+          - link "Web" [ref=e119] [cursor=pointer]:
+            - /url: https://noloencuentro.netlify.app/
+          - link "Código" [ref=e120] [cursor=pointer]:
+            - /url: https://github.com/gadetru/devchallenges
+    - generic [ref=e154]:
+      - button [disabled] [ref=e155]:
+        - img "volver" [ref=e156]
+      - generic [ref=e157]: 1 / 9
+      - button [ref=e158]:
+        - img "siguiente" [ref=e159]
+  - contentinfo [ref=e161]:
+    - 'heading "Creado por: Gabriel Delgado Trujillo" [level=2] [ref=e162]'
+    - generic [ref=e163]:
+      - link [ref=e164] [cursor=pointer]:
+        - /url: https://www.linkedin.com/in/gadetru
+        - img "LinkedIn" [ref=e165]
+      - link [ref=e166] [cursor=pointer]:
+        - /url: https://github.com/gadetru
+        - img "GitHub" [ref=e167]
